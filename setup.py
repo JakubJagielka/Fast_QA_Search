@@ -3,18 +3,17 @@ from Cython.Build import cythonize
 
 extensions = [
     Extension(
-        "cython_files.Tokenizer",  # Module 2
-        [r"cython_files\Tokenizer.pyx"],
+        "SearchLand.cython_files.Tokenizer", 
+        ["SearchLand/cython_files/Tokenizer.pyx"],
         language="c++"
     ),
     Extension(
-        "cython_files.Data_Struct",  # Module 1
-        [r"cython_files\Data_Struct.pyx"],
+        "SearchLand.cython_files.Data_Struct",
+        ["SearchLand/cython_files/Data_Struct.pyx"],
         language="c++"
     ),
-
 ]
 
 setup(
-    ext_modules=cythonize(extensions),
+    ext_modules=cythonize(extensions, language_level="3"),
 )

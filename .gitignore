@@ -1,0 +1,6 @@
+/.idea
+/.venv
+/document_metadata.json
+/vector_store
+/__pycache__
+/data
