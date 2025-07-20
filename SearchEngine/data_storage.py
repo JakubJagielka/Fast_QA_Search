@@ -64,7 +64,6 @@ class DataStorage():
 
         logger.info(f"Loaded content for {loaded_count} documents into InvertedIndex.")
 
-
     def choose_embedding_model(self, model_type: EmbeddingType):
         logger.info(f"Choosing embedding model: {model_type}")
         if model_type == EmbeddingType.OPENAI_SMALL:
@@ -80,7 +79,6 @@ class DataStorage():
             return MiniLM_L6()
         else:
             raise NotImplementedError(f"Embedding model type {model_type} not supported.")
-
 
     def read_from_file(self, file_path, from_folder: bool = False) -> bool:
         try:
@@ -233,7 +231,6 @@ class DataStorage():
             logger.error(f"Error processing folder {folder_path}: {str(e)}", exc_info=True)
             return False
 
-
     def read_from_text(self, text: str, source_label: str = "text_input") -> bool:
         logger.info(f"Processing text input: {source_label}")
         try:
@@ -292,7 +289,6 @@ class DataStorage():
             logger.error(f"Error processing text input: {e}", exc_info=True)
             return False
 
-
     def read_from_url(self, url: str) -> bool:
         logger.info(f"Processing URL: {url}")
         try:
@@ -308,7 +304,6 @@ class DataStorage():
         except Exception as e:
             logger.error(f"Error processing URL {url}: {e}", exc_info=True)
             return False
-
 
     def read_from_domain(self, url: str, save_to_disk: bool = False, max_pages: int = 20, save_dir: str = "data/crawled") -> bool:
         logger.info(f"Processing domain crawl for: {url}")
@@ -366,12 +361,10 @@ class DataStorage():
             logger.error(f"Error processing domain crawl {url}: {e}", exc_info=True)
             return False
 
-
     def save_vector_store(self, directory=None):
         save_dir = directory or self.vector_store_path
         logger.info(f"Saving vector store to {save_dir}")
         self.vector_store.save(save_dir)
-
 
     def create_embeddings(self, text_or_list):
         if not text_or_list:
@@ -416,7 +409,6 @@ class DataStorage():
             logger.error(f"Failed to create embeddings: {e}", exc_info=True)
             return np.array([]) if is_single_string else np.empty((0, self.embedding_model.dim))
 
-
     def list_tracked_documents(self) -> List[Dict[str, Any]]:
         docs = []
         for metadata in self.document_tracker.documents.values():
@@ -443,8 +435,7 @@ class DataStorage():
                 "model": metadata.embedding_model_name
             })
         return sorted(docs, key=lambda x: x['file_path'])
-
-
+    
     def delete_source_by_id(self, doc_id: int) -> bool:
         logger.info(f"Attempting deletion for doc_id: {doc_id}")
         file_path = self.document_tracker.get_filepath_for_docid(doc_id)

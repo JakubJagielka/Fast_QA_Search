@@ -4,12 +4,12 @@
 {
     "distutils": {
         "language": "c++",
-        "name": "SearchLand.cython_files.Tokenizer",
+        "name": "SearchEngine.cython_files.Tokenizer",
         "sources": [
-            "SearchLand/cython_files/Tokenizer.pyx"
+            "SearchEngine/cython_files/Tokenizer.pyx"
         ]
     },
-    "module_name": "SearchLand.cython_files.Tokenizer"
+    "module_name": "SearchEngine.cython_files.Tokenizer"
 }
 END: Cython Metadata */
 
@@ -1241,8 +1241,8 @@ static CYTHON_INLINE float __PYX_NAN() {
     #define __PYX_EXTERN_C extern "C++"
 #endif
 
-#define __PYX_HAVE__SearchLand__cython_files__Tokenizer
-#define __PYX_HAVE_API__SearchLand__cython_files__Tokenizer
+#define __PYX_HAVE__SearchEngine__cython_files__Tokenizer
+#define __PYX_HAVE_API__SearchEngine__cython_files__Tokenizer
 /* Early includes */
 #ifdef _OPENMP
 #include <omp.h>
@@ -1492,7 +1492,7 @@ static const char *__pyx_filename;
 /* #### Code section: filename_table ### */
 
 static const char *__pyx_f[] = {
-  "SearchLand\\\\cython_files\\\\Tokenizer.pyx",
+  "SearchEngine\\\\cython_files\\\\Tokenizer.pyx",
   "<stringsource>",
 };
 /* #### Code section: utility_code_proto_before_types ### */
@@ -1506,18 +1506,18 @@ static const char *__pyx_f[] = {
 /* #### Code section: type_declarations ### */
 
 /*--- Type declarations ---*/
-struct __pyx_obj_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer;
+struct __pyx_obj_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer;
 
-/* "SearchLand/cython_files/Tokenizer.pyx":25
+/* "SearchEngine/cython_files/Tokenizer.pyx":25
  * }
  * 
  * cdef class BasicTokenizer:             # <<<<<<<<<<<<<<
  *     """
  *     A Unicodeaware tokenizer:
  */
-struct __pyx_obj_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer {
+struct __pyx_obj_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer {
   PyObject_HEAD
-  struct __pyx_vtabstruct_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *__pyx_vtab;
+  struct __pyx_vtabstruct_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *__pyx_vtab;
   int min_token_length;
   int max_token_length;
   int remove_numbers;
@@ -1526,13 +1526,13 @@ struct __pyx_obj_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer {
 
 
 
-struct __pyx_vtabstruct_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer {
-  int (*_is_punctuation)(struct __pyx_obj_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *, PyObject *);
-  PyObject *(*_normalize)(struct __pyx_obj_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *, PyObject *);
-  int (*_is_number)(struct __pyx_obj_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *, PyObject *);
-  int (*_is_valid)(struct __pyx_obj_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *, PyObject *);
+struct __pyx_vtabstruct_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer {
+  int (*_is_punctuation)(struct __pyx_obj_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *, PyObject *);
+  PyObject *(*_normalize)(struct __pyx_obj_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *, PyObject *);
+  int (*_is_number)(struct __pyx_obj_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *, PyObject *);
+  int (*_is_valid)(struct __pyx_obj_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *, PyObject *);
 };
-static struct __pyx_vtabstruct_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *__pyx_vtabptr_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer;
+static struct __pyx_vtabstruct_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *__pyx_vtabptr_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer;
 /* #### Code section: utility_code_proto ### */
 
 /* --- Runtime support code (head) --- */
@@ -2297,22 +2297,22 @@ static int __Pyx_check_binary_version(unsigned long ct_version, unsigned long rt
 static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
 /* #### Code section: module_declarations ### */
-static int __pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_punctuation(CYTHON_UNUSED struct __pyx_obj_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *__pyx_v_self, PyObject *__pyx_v_c); /* proto*/
-static PyObject *__pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__normalize(CYTHON_UNUSED struct __pyx_obj_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *__pyx_v_self, PyObject *__pyx_v_token); /* proto*/
-static int __pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_number(CYTHON_UNUSED struct __pyx_obj_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *__pyx_v_self, PyObject *__pyx_v_token); /* proto*/
-static int __pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_valid(struct __pyx_obj_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *__pyx_v_self, PyObject *__pyx_v_token); /* proto*/
+static int __pyx_f_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer__is_punctuation(CYTHON_UNUSED struct __pyx_obj_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *__pyx_v_self, PyObject *__pyx_v_c); /* proto*/
+static PyObject *__pyx_f_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer__normalize(CYTHON_UNUSED struct __pyx_obj_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *__pyx_v_self, PyObject *__pyx_v_token); /* proto*/
+static int __pyx_f_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer__is_number(CYTHON_UNUSED struct __pyx_obj_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *__pyx_v_self, PyObject *__pyx_v_token); /* proto*/
+static int __pyx_f_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer__is_valid(struct __pyx_obj_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *__pyx_v_self, PyObject *__pyx_v_token); /* proto*/
 
-/* Module declarations from "SearchLand.cython_files.Tokenizer" */
-static PyObject *__pyx_v_10SearchLand_12cython_files_9Tokenizer_STOP_WORDS = 0;
-static PyObject *__pyx_v_10SearchLand_12cython_files_9Tokenizer_CONTRACTIONS = 0;
-static PyObject *__pyx_f_10SearchLand_12cython_files_9Tokenizer___pyx_unpickle_BasicTokenizer__set_state(struct __pyx_obj_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *, PyObject *); /*proto*/
+/* Module declarations from "SearchEngine.cython_files.Tokenizer" */
+static PyObject *__pyx_v_10SearchEngine_12cython_files_9Tokenizer_STOP_WORDS = 0;
+static PyObject *__pyx_v_10SearchEngine_12cython_files_9Tokenizer_CONTRACTIONS = 0;
+static PyObject *__pyx_f_10SearchEngine_12cython_files_9Tokenizer___pyx_unpickle_BasicTokenizer__set_state(struct __pyx_obj_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *, PyObject *); /*proto*/
 /* #### Code section: typeinfo ### */
 /* #### Code section: before_global_var ### */
-#define __Pyx_MODULE_NAME "SearchLand.cython_files.Tokenizer"
-extern int __pyx_module_is_main_SearchLand__cython_files__Tokenizer;
-int __pyx_module_is_main_SearchLand__cython_files__Tokenizer = 0;
+#define __Pyx_MODULE_NAME "SearchEngine.cython_files.Tokenizer"
+extern int __pyx_module_is_main_SearchEngine__cython_files__Tokenizer;
+int __pyx_module_is_main_SearchEngine__cython_files__Tokenizer = 0;
 
-/* Implementation of "SearchLand.cython_files.Tokenizer" */
+/* Implementation of "SearchEngine.cython_files.Tokenizer" */
 /* #### Code section: global_var ### */
 /* #### Code section: string_decls ### */
 static const char __pyx_k_[] = "";
@@ -2417,14 +2417,14 @@ static const char __pyx_k_pyx_unpickle_BasicTokenizer[] = "__pyx_unpickle_BasicT
 static const char __pyx_k_BasicTokenizer___reduce_cython[] = "BasicTokenizer.__reduce_cython__";
 static const char __pyx_k_BasicTokenizer___setstate_cython[] = "BasicTokenizer.__setstate_cython__";
 static const char __pyx_k_Incompatible_checksums_0x_x_vs_0[] = "Incompatible checksums (0x%x vs (0xd01aa6c, 0xf93844a, 0x62ec16f) = (max_token_length, min_token_length, remove_numbers, remove_single_chars))";
-static const char __pyx_k_SearchLand_cython_files_Tokenize[] = "SearchLand.cython_files.Tokenizer";
+static const char __pyx_k_SearchEngine_cython_files_Tokenize[] = "SearchEngine.cython_files.Tokenizer";
 /* #### Code section: decls ### */
-static int __pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer___init__(struct __pyx_obj_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *__pyx_v_self, int __pyx_v_remove_numbers, int __pyx_v_remove_single_chars, int __pyx_v_min_token_length, int __pyx_v_max_token_length); /* proto */
-static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_2__call__(struct __pyx_obj_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *__pyx_v_self, PyObject *__pyx_v_text); /* proto */
-static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_4__reduce_cython__(struct __pyx_obj_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_6__setstate_cython__(struct __pyx_obj_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *__pyx_v_self, PyObject *__pyx_v___pyx_state); /* proto */
-static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer___pyx_unpickle_BasicTokenizer(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
-static PyObject *__pyx_tp_new_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static int __pyx_pf_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer___init__(struct __pyx_obj_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *__pyx_v_self, int __pyx_v_remove_numbers, int __pyx_v_remove_single_chars, int __pyx_v_min_token_length, int __pyx_v_max_token_length); /* proto */
+static PyObject *__pyx_pf_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer_2__call__(struct __pyx_obj_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *__pyx_v_self, PyObject *__pyx_v_text); /* proto */
+static PyObject *__pyx_pf_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer_4__reduce_cython__(struct __pyx_obj_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer_6__setstate_cython__(struct __pyx_obj_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *__pyx_v_self, PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_pf_10SearchEngine_12cython_files_9Tokenizer___pyx_unpickle_BasicTokenizer(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_tp_new_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static __Pyx_CachedCFunction __pyx_umethod_PyList_Type_clear = {0, 0, 0, 0, 0};
 /* #### Code section: late_includes ### */
 /* #### Code section: module_state ### */
@@ -2454,9 +2454,9 @@ typedef struct {
   PyTypeObject *__pyx_CoroutineType;
   #endif
   #if CYTHON_USE_MODULE_STATE
-  PyObject *__pyx_type_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer;
+  PyObject *__pyx_type_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer;
   #endif
-  PyTypeObject *__pyx_ptype_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer;
+  PyTypeObject *__pyx_ptype_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer;
   PyObject *__pyx_kp_u_;
   PyObject *__pyx_n_s_BasicTokenizer;
   PyObject *__pyx_n_s_BasicTokenizer___reduce_cython;
@@ -2464,7 +2464,7 @@ typedef struct {
   PyObject *__pyx_kp_s_Incompatible_checksums_0x_x_vs_0;
   PyObject *__pyx_n_u_P;
   PyObject *__pyx_n_s_PickleError;
-  PyObject *__pyx_n_s_SearchLand_cython_files_Tokenize;
+  PyObject *__pyx_n_s_SearchEngine_cython_files_Tokenize;
   PyObject *__pyx_n_s__11;
   PyObject *__pyx_kp_u__3;
   PyObject *__pyx_n_s__4;
@@ -2612,8 +2612,8 @@ static int __pyx_m_clear(PyObject *m) {
   #ifdef __Pyx_FusedFunction_USED
   Py_CLEAR(clear_module_state->__pyx_FusedFunctionType);
   #endif
-  Py_CLEAR(clear_module_state->__pyx_ptype_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer);
-  Py_CLEAR(clear_module_state->__pyx_type_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer);
+  Py_CLEAR(clear_module_state->__pyx_ptype_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer);
+  Py_CLEAR(clear_module_state->__pyx_type_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer);
   Py_CLEAR(clear_module_state->__pyx_kp_u_);
   Py_CLEAR(clear_module_state->__pyx_n_s_BasicTokenizer);
   Py_CLEAR(clear_module_state->__pyx_n_s_BasicTokenizer___reduce_cython);
@@ -2621,7 +2621,7 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_kp_s_Incompatible_checksums_0x_x_vs_0);
   Py_CLEAR(clear_module_state->__pyx_n_u_P);
   Py_CLEAR(clear_module_state->__pyx_n_s_PickleError);
-  Py_CLEAR(clear_module_state->__pyx_n_s_SearchLand_cython_files_Tokenize);
+  Py_CLEAR(clear_module_state->__pyx_n_s_SearchEngine_cython_files_Tokenize);
   Py_CLEAR(clear_module_state->__pyx_n_s__11);
   Py_CLEAR(clear_module_state->__pyx_kp_u__3);
   Py_CLEAR(clear_module_state->__pyx_n_s__4);
@@ -2747,8 +2747,8 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   #ifdef __Pyx_FusedFunction_USED
   Py_VISIT(traverse_module_state->__pyx_FusedFunctionType);
   #endif
-  Py_VISIT(traverse_module_state->__pyx_ptype_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer);
-  Py_VISIT(traverse_module_state->__pyx_type_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer);
+  Py_VISIT(traverse_module_state->__pyx_ptype_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer);
+  Py_VISIT(traverse_module_state->__pyx_type_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer);
   Py_VISIT(traverse_module_state->__pyx_kp_u_);
   Py_VISIT(traverse_module_state->__pyx_n_s_BasicTokenizer);
   Py_VISIT(traverse_module_state->__pyx_n_s_BasicTokenizer___reduce_cython);
@@ -2756,7 +2756,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_kp_s_Incompatible_checksums_0x_x_vs_0);
   Py_VISIT(traverse_module_state->__pyx_n_u_P);
   Py_VISIT(traverse_module_state->__pyx_n_s_PickleError);
-  Py_VISIT(traverse_module_state->__pyx_n_s_SearchLand_cython_files_Tokenize);
+  Py_VISIT(traverse_module_state->__pyx_n_s_SearchEngine_cython_files_Tokenize);
   Py_VISIT(traverse_module_state->__pyx_n_s__11);
   Py_VISIT(traverse_module_state->__pyx_kp_u__3);
   Py_VISIT(traverse_module_state->__pyx_n_s__4);
@@ -2891,9 +2891,9 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_CoroutineType __pyx_mstate_global->__pyx_CoroutineType
 #endif
 #if CYTHON_USE_MODULE_STATE
-#define __pyx_type_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer __pyx_mstate_global->__pyx_type_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer
+#define __pyx_type_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer __pyx_mstate_global->__pyx_type_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer
 #endif
-#define __pyx_ptype_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer __pyx_mstate_global->__pyx_ptype_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer
+#define __pyx_ptype_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer __pyx_mstate_global->__pyx_ptype_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer
 #define __pyx_kp_u_ __pyx_mstate_global->__pyx_kp_u_
 #define __pyx_n_s_BasicTokenizer __pyx_mstate_global->__pyx_n_s_BasicTokenizer
 #define __pyx_n_s_BasicTokenizer___reduce_cython __pyx_mstate_global->__pyx_n_s_BasicTokenizer___reduce_cython
@@ -2901,7 +2901,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_kp_s_Incompatible_checksums_0x_x_vs_0 __pyx_mstate_global->__pyx_kp_s_Incompatible_checksums_0x_x_vs_0
 #define __pyx_n_u_P __pyx_mstate_global->__pyx_n_u_P
 #define __pyx_n_s_PickleError __pyx_mstate_global->__pyx_n_s_PickleError
-#define __pyx_n_s_SearchLand_cython_files_Tokenize __pyx_mstate_global->__pyx_n_s_SearchLand_cython_files_Tokenize
+#define __pyx_n_s_SearchEngine_cython_files_Tokenize __pyx_mstate_global->__pyx_n_s_SearchEngine_cython_files_Tokenize
 #define __pyx_n_s__11 __pyx_mstate_global->__pyx_n_s__11
 #define __pyx_kp_u__3 __pyx_mstate_global->__pyx_kp_u__3
 #define __pyx_n_s__4 __pyx_mstate_global->__pyx_n_s__4
@@ -3009,7 +3009,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_codeobj__10 __pyx_mstate_global->__pyx_codeobj__10
 /* #### Code section: module_code ### */
 
-/* "SearchLand/cython_files/Tokenizer.pyx":36
+/* "SearchEngine/cython_files/Tokenizer.pyx":36
  *     cdef bint remove_numbers, remove_single_chars
  * 
  *     def __init__(self,             # <<<<<<<<<<<<<<
@@ -3018,8 +3018,8 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
  */
 
 /* Python wrapper */
-static int __pyx_pw_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_1__init__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_1__init__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer_1__init__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer_1__init__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_v_remove_numbers;
   int __pyx_v_remove_single_chars;
   int __pyx_v_min_token_length;
@@ -3107,7 +3107,7 @@ static int __pyx_pw_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_1__i
       __pyx_v_remove_numbers = __Pyx_PyObject_IsTrue(values[0]); if (unlikely((__pyx_v_remove_numbers == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 37, __pyx_L3_error)
     } else {
 
-      /* "SearchLand/cython_files/Tokenizer.pyx":37
+      /* "SearchEngine/cython_files/Tokenizer.pyx":37
  * 
  *     def __init__(self,
  *                  bint remove_numbers=False,             # <<<<<<<<<<<<<<
@@ -3120,7 +3120,7 @@ static int __pyx_pw_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_1__i
       __pyx_v_remove_single_chars = __Pyx_PyObject_IsTrue(values[1]); if (unlikely((__pyx_v_remove_single_chars == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 38, __pyx_L3_error)
     } else {
 
-      /* "SearchLand/cython_files/Tokenizer.pyx":38
+      /* "SearchEngine/cython_files/Tokenizer.pyx":38
  *     def __init__(self,
  *                  bint remove_numbers=False,
  *                  bint remove_single_chars=True,             # <<<<<<<<<<<<<<
@@ -3152,13 +3152,13 @@ static int __pyx_pw_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_1__i
       __Pyx_Arg_XDECREF_VARARGS(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("SearchLand.cython_files.Tokenizer.BasicTokenizer.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("SearchEngine.cython_files.Tokenizer.BasicTokenizer.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer___init__(((struct __pyx_obj_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *)__pyx_v_self), __pyx_v_remove_numbers, __pyx_v_remove_single_chars, __pyx_v_min_token_length, __pyx_v_max_token_length);
+  __pyx_r = __pyx_pf_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer___init__(((struct __pyx_obj_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *)__pyx_v_self), __pyx_v_remove_numbers, __pyx_v_remove_single_chars, __pyx_v_min_token_length, __pyx_v_max_token_length);
 
-  /* "SearchLand/cython_files/Tokenizer.pyx":36
+  /* "SearchEngine/cython_files/Tokenizer.pyx":36
  *     cdef bint remove_numbers, remove_single_chars
  * 
  *     def __init__(self,             # <<<<<<<<<<<<<<
@@ -3177,10 +3177,10 @@ static int __pyx_pw_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_1__i
   return __pyx_r;
 }
 
-static int __pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer___init__(struct __pyx_obj_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *__pyx_v_self, int __pyx_v_remove_numbers, int __pyx_v_remove_single_chars, int __pyx_v_min_token_length, int __pyx_v_max_token_length) {
+static int __pyx_pf_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer___init__(struct __pyx_obj_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *__pyx_v_self, int __pyx_v_remove_numbers, int __pyx_v_remove_single_chars, int __pyx_v_min_token_length, int __pyx_v_max_token_length) {
   int __pyx_r;
 
-  /* "SearchLand/cython_files/Tokenizer.pyx":41
+  /* "SearchEngine/cython_files/Tokenizer.pyx":41
  *                  int min_token_length=2,
  *                  int max_token_length=50):
  *         self.remove_numbers = remove_numbers             # <<<<<<<<<<<<<<
@@ -3189,7 +3189,7 @@ static int __pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer___in
  */
   __pyx_v_self->remove_numbers = __pyx_v_remove_numbers;
 
-  /* "SearchLand/cython_files/Tokenizer.pyx":42
+  /* "SearchEngine/cython_files/Tokenizer.pyx":42
  *                  int max_token_length=50):
  *         self.remove_numbers = remove_numbers
  *         self.remove_single_chars = remove_single_chars             # <<<<<<<<<<<<<<
@@ -3198,7 +3198,7 @@ static int __pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer___in
  */
   __pyx_v_self->remove_single_chars = __pyx_v_remove_single_chars;
 
-  /* "SearchLand/cython_files/Tokenizer.pyx":43
+  /* "SearchEngine/cython_files/Tokenizer.pyx":43
  *         self.remove_numbers = remove_numbers
  *         self.remove_single_chars = remove_single_chars
  *         self.min_token_length = min_token_length             # <<<<<<<<<<<<<<
@@ -3207,7 +3207,7 @@ static int __pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer___in
  */
   __pyx_v_self->min_token_length = __pyx_v_min_token_length;
 
-  /* "SearchLand/cython_files/Tokenizer.pyx":44
+  /* "SearchEngine/cython_files/Tokenizer.pyx":44
  *         self.remove_single_chars = remove_single_chars
  *         self.min_token_length = min_token_length
  *         self.max_token_length = max_token_length             # <<<<<<<<<<<<<<
@@ -3216,7 +3216,7 @@ static int __pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer___in
  */
   __pyx_v_self->max_token_length = __pyx_v_max_token_length;
 
-  /* "SearchLand/cython_files/Tokenizer.pyx":36
+  /* "SearchEngine/cython_files/Tokenizer.pyx":36
  *     cdef bint remove_numbers, remove_single_chars
  * 
  *     def __init__(self,             # <<<<<<<<<<<<<<
@@ -3229,7 +3229,7 @@ static int __pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer___in
   return __pyx_r;
 }
 
-/* "SearchLand/cython_files/Tokenizer.pyx":46
+/* "SearchEngine/cython_files/Tokenizer.pyx":46
  *         self.max_token_length = max_token_length
  * 
  *     cdef bint _is_punctuation(self, str c):             # <<<<<<<<<<<<<<
@@ -3237,7 +3237,7 @@ static int __pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer___in
  *         return unicodedata.category(c).startswith('P') or c.isspace()
  */
 
-static int __pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_punctuation(CYTHON_UNUSED struct __pyx_obj_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *__pyx_v_self, PyObject *__pyx_v_c) {
+static int __pyx_f_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer__is_punctuation(CYTHON_UNUSED struct __pyx_obj_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *__pyx_v_self, PyObject *__pyx_v_c) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
@@ -3252,7 +3252,7 @@ static int __pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_p
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_is_punctuation", 1);
 
-  /* "SearchLand/cython_files/Tokenizer.pyx":48
+  /* "SearchEngine/cython_files/Tokenizer.pyx":48
  *     cdef bint _is_punctuation(self, str c):
  *         # anything whose Unicode category starts with 'P' or is whitespace
  *         return unicodedata.category(c).startswith('P') or c.isspace()             # <<<<<<<<<<<<<<
@@ -3349,7 +3349,7 @@ static int __pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_p
   __pyx_r = __pyx_t_1;
   goto __pyx_L0;
 
-  /* "SearchLand/cython_files/Tokenizer.pyx":46
+  /* "SearchEngine/cython_files/Tokenizer.pyx":46
  *         self.max_token_length = max_token_length
  * 
  *     cdef bint _is_punctuation(self, str c):             # <<<<<<<<<<<<<<
@@ -3363,14 +3363,14 @@ static int __pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_p
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_AddTraceback("SearchLand.cython_files.Tokenizer.BasicTokenizer._is_punctuation", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("SearchEngine.cython_files.Tokenizer.BasicTokenizer._is_punctuation", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "SearchLand/cython_files/Tokenizer.pyx":50
+/* "SearchEngine/cython_files/Tokenizer.pyx":50
  *         return unicodedata.category(c).startswith('P') or c.isspace()
  * 
  *     cdef str _normalize(self, str token):             # <<<<<<<<<<<<<<
@@ -3378,7 +3378,7 @@ static int __pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_p
  *             if token.endswith(k):
  */
 
-static PyObject *__pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__normalize(CYTHON_UNUSED struct __pyx_obj_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *__pyx_v_self, PyObject *__pyx_v_token) {
+static PyObject *__pyx_f_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer__normalize(CYTHON_UNUSED struct __pyx_obj_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *__pyx_v_self, PyObject *__pyx_v_token) {
   PyObject *__pyx_v_k = NULL;
   PyObject *__pyx_v_v = NULL;
   PyObject *__pyx_r = NULL;
@@ -3397,7 +3397,7 @@ static PyObject *__pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_normalize", 1);
 
-  /* "SearchLand/cython_files/Tokenizer.pyx":51
+  /* "SearchEngine/cython_files/Tokenizer.pyx":51
  * 
  *     cdef str _normalize(self, str token):
  *         for k, v in CONTRACTIONS.items():             # <<<<<<<<<<<<<<
@@ -3405,11 +3405,11 @@ static PyObject *__pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer
  *                 return token[:-len(k)] + v
  */
   __pyx_t_2 = 0;
-  if (unlikely(__pyx_v_10SearchLand_12cython_files_9Tokenizer_CONTRACTIONS == Py_None)) {
+  if (unlikely(__pyx_v_10SearchEngine_12cython_files_9Tokenizer_CONTRACTIONS == Py_None)) {
     PyErr_Format(PyExc_AttributeError, "'NoneType' object has no attribute '%.30s'", "items");
     __PYX_ERR(0, 51, __pyx_L1_error)
   }
-  __pyx_t_5 = __Pyx_dict_iterator(__pyx_v_10SearchLand_12cython_files_9Tokenizer_CONTRACTIONS, 1, __pyx_n_s_items, (&__pyx_t_3), (&__pyx_t_4)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 51, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_dict_iterator(__pyx_v_10SearchEngine_12cython_files_9Tokenizer_CONTRACTIONS, 1, __pyx_n_s_items, (&__pyx_t_3), (&__pyx_t_4)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_1);
   __pyx_t_1 = __pyx_t_5;
@@ -3425,7 +3425,7 @@ static PyObject *__pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer
     __Pyx_XDECREF_SET(__pyx_v_v, __pyx_t_6);
     __pyx_t_6 = 0;
 
-    /* "SearchLand/cython_files/Tokenizer.pyx":52
+    /* "SearchEngine/cython_files/Tokenizer.pyx":52
  *     cdef str _normalize(self, str token):
  *         for k, v in CONTRACTIONS.items():
  *             if token.endswith(k):             # <<<<<<<<<<<<<<
@@ -3439,7 +3439,7 @@ static PyObject *__pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer
     __pyx_t_8 = __Pyx_PyUnicode_Tailmatch(__pyx_v_token, __pyx_v_k, 0, PY_SSIZE_T_MAX, 1); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 52, __pyx_L1_error)
     if (__pyx_t_8) {
 
-      /* "SearchLand/cython_files/Tokenizer.pyx":53
+      /* "SearchEngine/cython_files/Tokenizer.pyx":53
  *         for k, v in CONTRACTIONS.items():
  *             if token.endswith(k):
  *                 return token[:-len(k)] + v             # <<<<<<<<<<<<<<
@@ -3463,7 +3463,7 @@ static PyObject *__pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       goto __pyx_L0;
 
-      /* "SearchLand/cython_files/Tokenizer.pyx":52
+      /* "SearchEngine/cython_files/Tokenizer.pyx":52
  *     cdef str _normalize(self, str token):
  *         for k, v in CONTRACTIONS.items():
  *             if token.endswith(k):             # <<<<<<<<<<<<<<
@@ -3474,7 +3474,7 @@ static PyObject *__pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "SearchLand/cython_files/Tokenizer.pyx":54
+  /* "SearchEngine/cython_files/Tokenizer.pyx":54
  *             if token.endswith(k):
  *                 return token[:-len(k)] + v
  *         return token             # <<<<<<<<<<<<<<
@@ -3486,7 +3486,7 @@ static PyObject *__pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer
   __pyx_r = __pyx_v_token;
   goto __pyx_L0;
 
-  /* "SearchLand/cython_files/Tokenizer.pyx":50
+  /* "SearchEngine/cython_files/Tokenizer.pyx":50
  *         return unicodedata.category(c).startswith('P') or c.isspace()
  * 
  *     cdef str _normalize(self, str token):             # <<<<<<<<<<<<<<
@@ -3499,7 +3499,7 @@ static PyObject *__pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
-  __Pyx_AddTraceback("SearchLand.cython_files.Tokenizer.BasicTokenizer._normalize", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("SearchEngine.cython_files.Tokenizer.BasicTokenizer._normalize", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_k);
@@ -3509,7 +3509,7 @@ static PyObject *__pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer
   return __pyx_r;
 }
 
-/* "SearchLand/cython_files/Tokenizer.pyx":56
+/* "SearchEngine/cython_files/Tokenizer.pyx":56
  *         return token
  * 
  *     cdef bint _is_number(self, str token):             # <<<<<<<<<<<<<<
@@ -3517,7 +3517,7 @@ static PyObject *__pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer
  *         for ch in token:
  */
 
-static int __pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_number(CYTHON_UNUSED struct __pyx_obj_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *__pyx_v_self, PyObject *__pyx_v_token) {
+static int __pyx_f_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer__is_number(CYTHON_UNUSED struct __pyx_obj_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *__pyx_v_self, PyObject *__pyx_v_token) {
   int __pyx_v_has_digit;
   Py_UCS4 __pyx_v_ch;
   int __pyx_r;
@@ -3536,7 +3536,7 @@ static int __pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_n
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_is_number", 1);
 
-  /* "SearchLand/cython_files/Tokenizer.pyx":57
+  /* "SearchEngine/cython_files/Tokenizer.pyx":57
  * 
  *     cdef bint _is_number(self, str token):
  *         cdef bint has_digit = False             # <<<<<<<<<<<<<<
@@ -3545,7 +3545,7 @@ static int __pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_n
  */
   __pyx_v_has_digit = 0;
 
-  /* "SearchLand/cython_files/Tokenizer.pyx":58
+  /* "SearchEngine/cython_files/Tokenizer.pyx":58
  *     cdef bint _is_number(self, str token):
  *         cdef bint has_digit = False
  *         for ch in token:             # <<<<<<<<<<<<<<
@@ -3563,7 +3563,7 @@ static int __pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_n
     __pyx_t_2 = __pyx_t_7;
     __pyx_v_ch = __Pyx_PyUnicode_READ(__pyx_t_5, __pyx_t_4, __pyx_t_2);
 
-    /* "SearchLand/cython_files/Tokenizer.pyx":59
+    /* "SearchEngine/cython_files/Tokenizer.pyx":59
  *         cdef bint has_digit = False
  *         for ch in token:
  *             if ch.isdigit():             # <<<<<<<<<<<<<<
@@ -3573,7 +3573,7 @@ static int __pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_n
     __pyx_t_8 = Py_UNICODE_ISDIGIT(__pyx_v_ch); 
     if (__pyx_t_8) {
 
-      /* "SearchLand/cython_files/Tokenizer.pyx":60
+      /* "SearchEngine/cython_files/Tokenizer.pyx":60
  *         for ch in token:
  *             if ch.isdigit():
  *                 has_digit = True             # <<<<<<<<<<<<<<
@@ -3582,7 +3582,7 @@ static int __pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_n
  */
       __pyx_v_has_digit = 1;
 
-      /* "SearchLand/cython_files/Tokenizer.pyx":59
+      /* "SearchEngine/cython_files/Tokenizer.pyx":59
  *         cdef bint has_digit = False
  *         for ch in token:
  *             if ch.isdigit():             # <<<<<<<<<<<<<<
@@ -3592,7 +3592,7 @@ static int __pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_n
       goto __pyx_L5;
     }
 
-    /* "SearchLand/cython_files/Tokenizer.pyx":61
+    /* "SearchEngine/cython_files/Tokenizer.pyx":61
  *             if ch.isdigit():
  *                 has_digit = True
  *             elif ch not in ('.','-'):             # <<<<<<<<<<<<<<
@@ -3611,7 +3611,7 @@ static int __pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_n
     __pyx_t_9 = __pyx_t_8;
     if (__pyx_t_9) {
 
-      /* "SearchLand/cython_files/Tokenizer.pyx":62
+      /* "SearchEngine/cython_files/Tokenizer.pyx":62
  *                 has_digit = True
  *             elif ch not in ('.','-'):
  *                 return False             # <<<<<<<<<<<<<<
@@ -3622,7 +3622,7 @@ static int __pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_n
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       goto __pyx_L0;
 
-      /* "SearchLand/cython_files/Tokenizer.pyx":61
+      /* "SearchEngine/cython_files/Tokenizer.pyx":61
  *             if ch.isdigit():
  *                 has_digit = True
  *             elif ch not in ('.','-'):             # <<<<<<<<<<<<<<
@@ -3634,7 +3634,7 @@ static int __pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_n
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "SearchLand/cython_files/Tokenizer.pyx":63
+  /* "SearchEngine/cython_files/Tokenizer.pyx":63
  *             elif ch not in ('.','-'):
  *                 return False
  *         return has_digit             # <<<<<<<<<<<<<<
@@ -3644,7 +3644,7 @@ static int __pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_n
   __pyx_r = __pyx_v_has_digit;
   goto __pyx_L0;
 
-  /* "SearchLand/cython_files/Tokenizer.pyx":56
+  /* "SearchEngine/cython_files/Tokenizer.pyx":56
  *         return token
  * 
  *     cdef bint _is_number(self, str token):             # <<<<<<<<<<<<<<
@@ -3655,14 +3655,14 @@ static int __pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_n
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("SearchLand.cython_files.Tokenizer.BasicTokenizer._is_number", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("SearchEngine.cython_files.Tokenizer.BasicTokenizer._is_number", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "SearchLand/cython_files/Tokenizer.pyx":65
+/* "SearchEngine/cython_files/Tokenizer.pyx":65
  *         return has_digit
  * 
  *     cdef bint _is_valid(self, str token):             # <<<<<<<<<<<<<<
@@ -3670,7 +3670,7 @@ static int __pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_n
  *         if l < self.min_token_length or l > self.max_token_length:
  */
 
-static int __pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_valid(struct __pyx_obj_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *__pyx_v_self, PyObject *__pyx_v_token) {
+static int __pyx_f_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer__is_valid(struct __pyx_obj_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *__pyx_v_self, PyObject *__pyx_v_token) {
   Py_ssize_t __pyx_v_l;
   int __pyx_r;
   Py_ssize_t __pyx_t_1;
@@ -3680,7 +3680,7 @@ static int __pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_v
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
 
-  /* "SearchLand/cython_files/Tokenizer.pyx":66
+  /* "SearchEngine/cython_files/Tokenizer.pyx":66
  * 
  *     cdef bint _is_valid(self, str token):
  *         l = len(token)             # <<<<<<<<<<<<<<
@@ -3694,7 +3694,7 @@ static int __pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_v
   __pyx_t_1 = __Pyx_PyUnicode_GET_LENGTH(__pyx_v_token); if (unlikely(__pyx_t_1 == ((Py_ssize_t)-1))) __PYX_ERR(0, 66, __pyx_L1_error)
   __pyx_v_l = __pyx_t_1;
 
-  /* "SearchLand/cython_files/Tokenizer.pyx":67
+  /* "SearchEngine/cython_files/Tokenizer.pyx":67
  *     cdef bint _is_valid(self, str token):
  *         l = len(token)
  *         if l < self.min_token_length or l > self.max_token_length:             # <<<<<<<<<<<<<<
@@ -3712,7 +3712,7 @@ static int __pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_v
   __pyx_L4_bool_binop_done:;
   if (__pyx_t_2) {
 
-    /* "SearchLand/cython_files/Tokenizer.pyx":68
+    /* "SearchEngine/cython_files/Tokenizer.pyx":68
  *         l = len(token)
  *         if l < self.min_token_length or l > self.max_token_length:
  *             return False             # <<<<<<<<<<<<<<
@@ -3722,7 +3722,7 @@ static int __pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_v
     __pyx_r = 0;
     goto __pyx_L0;
 
-    /* "SearchLand/cython_files/Tokenizer.pyx":67
+    /* "SearchEngine/cython_files/Tokenizer.pyx":67
  *     cdef bint _is_valid(self, str token):
  *         l = len(token)
  *         if l < self.min_token_length or l > self.max_token_length:             # <<<<<<<<<<<<<<
@@ -3731,7 +3731,7 @@ static int __pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_v
  */
   }
 
-  /* "SearchLand/cython_files/Tokenizer.pyx":69
+  /* "SearchEngine/cython_files/Tokenizer.pyx":69
  *         if l < self.min_token_length or l > self.max_token_length:
  *             return False
  *         if self.remove_single_chars and l == 1:             # <<<<<<<<<<<<<<
@@ -3748,7 +3748,7 @@ static int __pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_v
   __pyx_L7_bool_binop_done:;
   if (__pyx_t_2) {
 
-    /* "SearchLand/cython_files/Tokenizer.pyx":70
+    /* "SearchEngine/cython_files/Tokenizer.pyx":70
  *             return False
  *         if self.remove_single_chars and l == 1:
  *             return False             # <<<<<<<<<<<<<<
@@ -3758,7 +3758,7 @@ static int __pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_v
     __pyx_r = 0;
     goto __pyx_L0;
 
-    /* "SearchLand/cython_files/Tokenizer.pyx":69
+    /* "SearchEngine/cython_files/Tokenizer.pyx":69
  *         if l < self.min_token_length or l > self.max_token_length:
  *             return False
  *         if self.remove_single_chars and l == 1:             # <<<<<<<<<<<<<<
@@ -3767,7 +3767,7 @@ static int __pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_v
  */
   }
 
-  /* "SearchLand/cython_files/Tokenizer.pyx":71
+  /* "SearchEngine/cython_files/Tokenizer.pyx":71
  *         if self.remove_single_chars and l == 1:
  *             return False
  *         if self.remove_numbers and self._is_number(token):             # <<<<<<<<<<<<<<
@@ -3779,12 +3779,12 @@ static int __pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_v
     __pyx_t_2 = __pyx_v_self->remove_numbers;
     goto __pyx_L10_bool_binop_done;
   }
-  __pyx_t_3 = ((struct __pyx_vtabstruct_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *)__pyx_v_self->__pyx_vtab)->_is_number(__pyx_v_self, __pyx_v_token); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 71, __pyx_L1_error)
+  __pyx_t_3 = ((struct __pyx_vtabstruct_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *)__pyx_v_self->__pyx_vtab)->_is_number(__pyx_v_self, __pyx_v_token); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 71, __pyx_L1_error)
   __pyx_t_2 = __pyx_t_3;
   __pyx_L10_bool_binop_done:;
   if (__pyx_t_2) {
 
-    /* "SearchLand/cython_files/Tokenizer.pyx":72
+    /* "SearchEngine/cython_files/Tokenizer.pyx":72
  *             return False
  *         if self.remove_numbers and self._is_number(token):
  *             return False             # <<<<<<<<<<<<<<
@@ -3794,7 +3794,7 @@ static int __pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_v
     __pyx_r = 0;
     goto __pyx_L0;
 
-    /* "SearchLand/cython_files/Tokenizer.pyx":71
+    /* "SearchEngine/cython_files/Tokenizer.pyx":71
  *         if self.remove_single_chars and l == 1:
  *             return False
  *         if self.remove_numbers and self._is_number(token):             # <<<<<<<<<<<<<<
@@ -3803,21 +3803,21 @@ static int __pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_v
  */
   }
 
-  /* "SearchLand/cython_files/Tokenizer.pyx":73
+  /* "SearchEngine/cython_files/Tokenizer.pyx":73
  *         if self.remove_numbers and self._is_number(token):
  *             return False
  *         if token in STOP_WORDS:             # <<<<<<<<<<<<<<
  *             return False
  *         return True
  */
-  if (unlikely(__pyx_v_10SearchLand_12cython_files_9Tokenizer_STOP_WORDS == Py_None)) {
+  if (unlikely(__pyx_v_10SearchEngine_12cython_files_9Tokenizer_STOP_WORDS == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not iterable");
     __PYX_ERR(0, 73, __pyx_L1_error)
   }
-  __pyx_t_2 = (__Pyx_PySet_ContainsTF(__pyx_v_token, __pyx_v_10SearchLand_12cython_files_9Tokenizer_STOP_WORDS, Py_EQ)); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 73, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PySet_ContainsTF(__pyx_v_token, __pyx_v_10SearchEngine_12cython_files_9Tokenizer_STOP_WORDS, Py_EQ)); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 73, __pyx_L1_error)
   if (__pyx_t_2) {
 
-    /* "SearchLand/cython_files/Tokenizer.pyx":74
+    /* "SearchEngine/cython_files/Tokenizer.pyx":74
  *             return False
  *         if token in STOP_WORDS:
  *             return False             # <<<<<<<<<<<<<<
@@ -3827,7 +3827,7 @@ static int __pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_v
     __pyx_r = 0;
     goto __pyx_L0;
 
-    /* "SearchLand/cython_files/Tokenizer.pyx":73
+    /* "SearchEngine/cython_files/Tokenizer.pyx":73
  *         if self.remove_numbers and self._is_number(token):
  *             return False
  *         if token in STOP_WORDS:             # <<<<<<<<<<<<<<
@@ -3836,7 +3836,7 @@ static int __pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_v
  */
   }
 
-  /* "SearchLand/cython_files/Tokenizer.pyx":75
+  /* "SearchEngine/cython_files/Tokenizer.pyx":75
  *         if token in STOP_WORDS:
  *             return False
  *         return True             # <<<<<<<<<<<<<<
@@ -3846,7 +3846,7 @@ static int __pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_v
   __pyx_r = 1;
   goto __pyx_L0;
 
-  /* "SearchLand/cython_files/Tokenizer.pyx":65
+  /* "SearchEngine/cython_files/Tokenizer.pyx":65
  *         return has_digit
  * 
  *     cdef bint _is_valid(self, str token):             # <<<<<<<<<<<<<<
@@ -3856,13 +3856,13 @@ static int __pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_v
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("SearchLand.cython_files.Tokenizer.BasicTokenizer._is_valid", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("SearchEngine.cython_files.Tokenizer.BasicTokenizer._is_valid", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   return __pyx_r;
 }
 
-/* "SearchLand/cython_files/Tokenizer.pyx":77
+/* "SearchEngine/cython_files/Tokenizer.pyx":77
  *         return True
  * 
  *     def __call__(self, text):             # <<<<<<<<<<<<<<
@@ -3871,12 +3871,12 @@ static int __pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_v
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_3__call__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-PyDoc_STRVAR(__pyx_doc_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_2__call__, "\n        text: a Python str (Unicode).\n        returns: a Python list of Python str tokens.\n        ");
+static PyObject *__pyx_pw_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer_3__call__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+PyDoc_STRVAR(__pyx_doc_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer_2__call__, "\n        text: a Python str (Unicode).\n        returns: a Python list of Python str tokens.\n        ");
 #if CYTHON_UPDATE_DESCRIPTOR_DOC
-struct wrapperbase __pyx_wrapperbase_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_2__call__;
+struct wrapperbase __pyx_wrapperbase_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer_2__call__;
 #endif
-static PyObject *__pyx_pw_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_3__call__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer_3__call__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_text = 0;
   CYTHON_UNUSED Py_ssize_t __pyx_nargs;
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
@@ -3936,11 +3936,11 @@ static PyObject *__pyx_pw_10SearchLand_12cython_files_9Tokenizer_14BasicTokenize
       __Pyx_Arg_XDECREF_VARARGS(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("SearchLand.cython_files.Tokenizer.BasicTokenizer.__call__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("SearchEngine.cython_files.Tokenizer.BasicTokenizer.__call__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_2__call__(((struct __pyx_obj_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *)__pyx_v_self), __pyx_v_text);
+  __pyx_r = __pyx_pf_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer_2__call__(((struct __pyx_obj_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *)__pyx_v_self), __pyx_v_text);
 
   /* function exit code */
   {
@@ -3953,7 +3953,7 @@ static PyObject *__pyx_pw_10SearchLand_12cython_files_9Tokenizer_14BasicTokenize
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_2__call__(struct __pyx_obj_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *__pyx_v_self, PyObject *__pyx_v_text) {
+static PyObject *__pyx_pf_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer_2__call__(struct __pyx_obj_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *__pyx_v_self, PyObject *__pyx_v_text) {
   PyObject *__pyx_v_tokens = 0;
   PyObject *__pyx_v_curr = 0;
   PyObject *__pyx_v_ch = NULL;
@@ -3974,7 +3974,7 @@ static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenize
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__call__", 1);
 
-  /* "SearchLand/cython_files/Tokenizer.pyx":82
+  /* "SearchEngine/cython_files/Tokenizer.pyx":82
  *         returns: a Python list of Python str tokens.
  *         """
  *         cdef list tokens = []             # <<<<<<<<<<<<<<
@@ -3986,7 +3986,7 @@ static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenize
   __pyx_v_tokens = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "SearchLand/cython_files/Tokenizer.pyx":83
+  /* "SearchEngine/cython_files/Tokenizer.pyx":83
  *         """
  *         cdef list tokens = []
  *         cdef list curr = []             # <<<<<<<<<<<<<<
@@ -3998,7 +3998,7 @@ static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenize
   __pyx_v_curr = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "SearchLand/cython_files/Tokenizer.pyx":84
+  /* "SearchEngine/cython_files/Tokenizer.pyx":84
  *         cdef list tokens = []
  *         cdef list curr = []
  *         for ch in text:             # <<<<<<<<<<<<<<
@@ -4060,7 +4060,7 @@ static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenize
     __Pyx_XDECREF_SET(__pyx_v_ch, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "SearchLand/cython_files/Tokenizer.pyx":85
+    /* "SearchEngine/cython_files/Tokenizer.pyx":85
  *         cdef list curr = []
  *         for ch in text:
  *             if self._is_punctuation(ch): #error             # <<<<<<<<<<<<<<
@@ -4068,10 +4068,10 @@ static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenize
  *                     tok = "".join(curr).lower()
  */
     if (!(likely(PyUnicode_CheckExact(__pyx_v_ch))||((__pyx_v_ch) == Py_None) || __Pyx_RaiseUnexpectedTypeError("unicode", __pyx_v_ch))) __PYX_ERR(0, 85, __pyx_L1_error)
-    __pyx_t_5 = ((struct __pyx_vtabstruct_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *)__pyx_v_self->__pyx_vtab)->_is_punctuation(__pyx_v_self, ((PyObject*)__pyx_v_ch)); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 85, __pyx_L1_error)
+    __pyx_t_5 = ((struct __pyx_vtabstruct_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *)__pyx_v_self->__pyx_vtab)->_is_punctuation(__pyx_v_self, ((PyObject*)__pyx_v_ch)); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 85, __pyx_L1_error)
     if (__pyx_t_5) {
 
-      /* "SearchLand/cython_files/Tokenizer.pyx":86
+      /* "SearchEngine/cython_files/Tokenizer.pyx":86
  *         for ch in text:
  *             if self._is_punctuation(ch): #error
  *                 if curr:             # <<<<<<<<<<<<<<
@@ -4081,7 +4081,7 @@ static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenize
       __pyx_t_5 = (PyList_GET_SIZE(__pyx_v_curr) != 0);
       if (__pyx_t_5) {
 
-        /* "SearchLand/cython_files/Tokenizer.pyx":87
+        /* "SearchEngine/cython_files/Tokenizer.pyx":87
  *             if self._is_punctuation(ch): #error
  *                 if curr:
  *                     tok = "".join(curr).lower()             # <<<<<<<<<<<<<<
@@ -4118,7 +4118,7 @@ static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenize
         __Pyx_XDECREF_SET(__pyx_v_tok, __pyx_t_4);
         __pyx_t_4 = 0;
 
-        /* "SearchLand/cython_files/Tokenizer.pyx":88
+        /* "SearchEngine/cython_files/Tokenizer.pyx":88
  *                 if curr:
  *                     tok = "".join(curr).lower()
  *                     tok = self._normalize(tok)             # <<<<<<<<<<<<<<
@@ -4126,12 +4126,12 @@ static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenize
  *                         tokens.append(tok)
  */
         if (!(likely(PyUnicode_CheckExact(__pyx_v_tok))||((__pyx_v_tok) == Py_None) || __Pyx_RaiseUnexpectedTypeError("unicode", __pyx_v_tok))) __PYX_ERR(0, 88, __pyx_L1_error)
-        __pyx_t_4 = ((struct __pyx_vtabstruct_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *)__pyx_v_self->__pyx_vtab)->_normalize(__pyx_v_self, ((PyObject*)__pyx_v_tok)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 88, __pyx_L1_error)
+        __pyx_t_4 = ((struct __pyx_vtabstruct_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *)__pyx_v_self->__pyx_vtab)->_normalize(__pyx_v_self, ((PyObject*)__pyx_v_tok)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 88, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_DECREF_SET(__pyx_v_tok, __pyx_t_4);
         __pyx_t_4 = 0;
 
-        /* "SearchLand/cython_files/Tokenizer.pyx":89
+        /* "SearchEngine/cython_files/Tokenizer.pyx":89
  *                     tok = "".join(curr).lower()
  *                     tok = self._normalize(tok)
  *                     if self._is_valid(tok):             # <<<<<<<<<<<<<<
@@ -4139,10 +4139,10 @@ static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenize
  *                     curr.clear()
  */
         if (!(likely(PyUnicode_CheckExact(__pyx_v_tok))||((__pyx_v_tok) == Py_None) || __Pyx_RaiseUnexpectedTypeError("unicode", __pyx_v_tok))) __PYX_ERR(0, 89, __pyx_L1_error)
-        __pyx_t_5 = ((struct __pyx_vtabstruct_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *)__pyx_v_self->__pyx_vtab)->_is_valid(__pyx_v_self, ((PyObject*)__pyx_v_tok)); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 89, __pyx_L1_error)
+        __pyx_t_5 = ((struct __pyx_vtabstruct_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *)__pyx_v_self->__pyx_vtab)->_is_valid(__pyx_v_self, ((PyObject*)__pyx_v_tok)); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 89, __pyx_L1_error)
         if (__pyx_t_5) {
 
-          /* "SearchLand/cython_files/Tokenizer.pyx":90
+          /* "SearchEngine/cython_files/Tokenizer.pyx":90
  *                     tok = self._normalize(tok)
  *                     if self._is_valid(tok):
  *                         tokens.append(tok)             # <<<<<<<<<<<<<<
@@ -4151,7 +4151,7 @@ static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenize
  */
           __pyx_t_9 = __Pyx_PyList_Append(__pyx_v_tokens, __pyx_v_tok); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(0, 90, __pyx_L1_error)
 
-          /* "SearchLand/cython_files/Tokenizer.pyx":89
+          /* "SearchEngine/cython_files/Tokenizer.pyx":89
  *                     tok = "".join(curr).lower()
  *                     tok = self._normalize(tok)
  *                     if self._is_valid(tok):             # <<<<<<<<<<<<<<
@@ -4160,7 +4160,7 @@ static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenize
  */
         }
 
-        /* "SearchLand/cython_files/Tokenizer.pyx":91
+        /* "SearchEngine/cython_files/Tokenizer.pyx":91
  *                     if self._is_valid(tok):
  *                         tokens.append(tok)
  *                     curr.clear()             # <<<<<<<<<<<<<<
@@ -4171,7 +4171,7 @@ static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenize
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-        /* "SearchLand/cython_files/Tokenizer.pyx":86
+        /* "SearchEngine/cython_files/Tokenizer.pyx":86
  *         for ch in text:
  *             if self._is_punctuation(ch): #error
  *                 if curr:             # <<<<<<<<<<<<<<
@@ -4180,7 +4180,7 @@ static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenize
  */
       }
 
-      /* "SearchLand/cython_files/Tokenizer.pyx":85
+      /* "SearchEngine/cython_files/Tokenizer.pyx":85
  *         cdef list curr = []
  *         for ch in text:
  *             if self._is_punctuation(ch): #error             # <<<<<<<<<<<<<<
@@ -4190,7 +4190,7 @@ static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenize
       goto __pyx_L5;
     }
 
-    /* "SearchLand/cython_files/Tokenizer.pyx":93
+    /* "SearchEngine/cython_files/Tokenizer.pyx":93
  *                     curr.clear()
  *             else:
  *                 curr.append(ch)             # <<<<<<<<<<<<<<
@@ -4202,7 +4202,7 @@ static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenize
     }
     __pyx_L5:;
 
-    /* "SearchLand/cython_files/Tokenizer.pyx":84
+    /* "SearchEngine/cython_files/Tokenizer.pyx":84
  *         cdef list tokens = []
  *         cdef list curr = []
  *         for ch in text:             # <<<<<<<<<<<<<<
@@ -4212,7 +4212,7 @@ static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenize
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "SearchLand/cython_files/Tokenizer.pyx":94
+  /* "SearchEngine/cython_files/Tokenizer.pyx":94
  *             else:
  *                 curr.append(ch)
  *         if curr:             # <<<<<<<<<<<<<<
@@ -4222,7 +4222,7 @@ static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenize
   __pyx_t_5 = (PyList_GET_SIZE(__pyx_v_curr) != 0);
   if (__pyx_t_5) {
 
-    /* "SearchLand/cython_files/Tokenizer.pyx":95
+    /* "SearchEngine/cython_files/Tokenizer.pyx":95
  *                 curr.append(ch)
  *         if curr:
  *             tok = "".join(curr).lower()             # <<<<<<<<<<<<<<
@@ -4259,7 +4259,7 @@ static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenize
     __Pyx_XDECREF_SET(__pyx_v_tok, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "SearchLand/cython_files/Tokenizer.pyx":96
+    /* "SearchEngine/cython_files/Tokenizer.pyx":96
  *         if curr:
  *             tok = "".join(curr).lower()
  *             tok = self._normalize(tok)             # <<<<<<<<<<<<<<
@@ -4267,12 +4267,12 @@ static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenize
  *                 tokens.append(tok)
  */
     if (!(likely(PyUnicode_CheckExact(__pyx_v_tok))||((__pyx_v_tok) == Py_None) || __Pyx_RaiseUnexpectedTypeError("unicode", __pyx_v_tok))) __PYX_ERR(0, 96, __pyx_L1_error)
-    __pyx_t_1 = ((struct __pyx_vtabstruct_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *)__pyx_v_self->__pyx_vtab)->_normalize(__pyx_v_self, ((PyObject*)__pyx_v_tok)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 96, __pyx_L1_error)
+    __pyx_t_1 = ((struct __pyx_vtabstruct_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *)__pyx_v_self->__pyx_vtab)->_normalize(__pyx_v_self, ((PyObject*)__pyx_v_tok)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 96, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF_SET(__pyx_v_tok, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "SearchLand/cython_files/Tokenizer.pyx":97
+    /* "SearchEngine/cython_files/Tokenizer.pyx":97
  *             tok = "".join(curr).lower()
  *             tok = self._normalize(tok)
  *             if self._is_valid(tok):             # <<<<<<<<<<<<<<
@@ -4280,10 +4280,10 @@ static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenize
  *         return tokens
  */
     if (!(likely(PyUnicode_CheckExact(__pyx_v_tok))||((__pyx_v_tok) == Py_None) || __Pyx_RaiseUnexpectedTypeError("unicode", __pyx_v_tok))) __PYX_ERR(0, 97, __pyx_L1_error)
-    __pyx_t_5 = ((struct __pyx_vtabstruct_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *)__pyx_v_self->__pyx_vtab)->_is_valid(__pyx_v_self, ((PyObject*)__pyx_v_tok)); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 97, __pyx_L1_error)
+    __pyx_t_5 = ((struct __pyx_vtabstruct_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *)__pyx_v_self->__pyx_vtab)->_is_valid(__pyx_v_self, ((PyObject*)__pyx_v_tok)); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 97, __pyx_L1_error)
     if (__pyx_t_5) {
 
-      /* "SearchLand/cython_files/Tokenizer.pyx":98
+      /* "SearchEngine/cython_files/Tokenizer.pyx":98
  *             tok = self._normalize(tok)
  *             if self._is_valid(tok):
  *                 tokens.append(tok)             # <<<<<<<<<<<<<<
@@ -4291,7 +4291,7 @@ static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenize
  */
       __pyx_t_9 = __Pyx_PyList_Append(__pyx_v_tokens, __pyx_v_tok); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(0, 98, __pyx_L1_error)
 
-      /* "SearchLand/cython_files/Tokenizer.pyx":97
+      /* "SearchEngine/cython_files/Tokenizer.pyx":97
  *             tok = "".join(curr).lower()
  *             tok = self._normalize(tok)
  *             if self._is_valid(tok):             # <<<<<<<<<<<<<<
@@ -4300,7 +4300,7 @@ static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenize
  */
     }
 
-    /* "SearchLand/cython_files/Tokenizer.pyx":94
+    /* "SearchEngine/cython_files/Tokenizer.pyx":94
  *             else:
  *                 curr.append(ch)
  *         if curr:             # <<<<<<<<<<<<<<
@@ -4309,7 +4309,7 @@ static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenize
  */
   }
 
-  /* "SearchLand/cython_files/Tokenizer.pyx":99
+  /* "SearchEngine/cython_files/Tokenizer.pyx":99
  *             if self._is_valid(tok):
  *                 tokens.append(tok)
  *         return tokens             # <<<<<<<<<<<<<<
@@ -4319,7 +4319,7 @@ static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenize
   __pyx_r = __pyx_v_tokens;
   goto __pyx_L0;
 
-  /* "SearchLand/cython_files/Tokenizer.pyx":77
+  /* "SearchEngine/cython_files/Tokenizer.pyx":77
  *         return True
  * 
  *     def __call__(self, text):             # <<<<<<<<<<<<<<
@@ -4333,7 +4333,7 @@ static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenize
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
-  __Pyx_AddTraceback("SearchLand.cython_files.Tokenizer.BasicTokenizer.__call__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("SearchEngine.cython_files.Tokenizer.BasicTokenizer.__call__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_tokens);
@@ -4352,15 +4352,15 @@ static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenize
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_5__reduce_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer_5__reduce_cython__(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_5__reduce_cython__ = {"__reduce_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_5__reduce_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_5__reduce_cython__(PyObject *__pyx_v_self, 
+static PyMethodDef __pyx_mdef_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer_5__reduce_cython__ = {"__reduce_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer_5__reduce_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer_5__reduce_cython__(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -4385,14 +4385,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   if (unlikely(__pyx_nargs > 0)) {
     __Pyx_RaiseArgtupleInvalid("__reduce_cython__", 1, 0, 0, __pyx_nargs); return NULL;}
   if (unlikely(__pyx_kwds) && __Pyx_NumKwargs_FASTCALL(__pyx_kwds) && unlikely(!__Pyx_CheckKeywordStrings(__pyx_kwds, "__reduce_cython__", 0))) return NULL;
-  __pyx_r = __pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_4__reduce_cython__(((struct __pyx_obj_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *)__pyx_v_self));
+  __pyx_r = __pyx_pf_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer_4__reduce_cython__(((struct __pyx_obj_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_4__reduce_cython__(struct __pyx_obj_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *__pyx_v_self) {
+static PyObject *__pyx_pf_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer_4__reduce_cython__(struct __pyx_obj_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *__pyx_v_self) {
   PyObject *__pyx_v_state = 0;
   PyObject *__pyx_v__dict = 0;
   int __pyx_v_use_setstate;
@@ -4614,7 +4614,7 @@ static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenize
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_AddTraceback("SearchLand.cython_files.Tokenizer.BasicTokenizer.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("SearchEngine.cython_files.Tokenizer.BasicTokenizer.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_state);
@@ -4632,15 +4632,15 @@ static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenize
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_7__setstate_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer_7__setstate_cython__(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_7__setstate_cython__ = {"__setstate_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_7__setstate_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_7__setstate_cython__(PyObject *__pyx_v_self, 
+static PyMethodDef __pyx_mdef_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer_7__setstate_cython__ = {"__setstate_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer_7__setstate_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer_7__setstate_cython__(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -4710,11 +4710,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("SearchLand.cython_files.Tokenizer.BasicTokenizer.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("SearchEngine.cython_files.Tokenizer.BasicTokenizer.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_6__setstate_cython__(((struct __pyx_obj_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *)__pyx_v_self), __pyx_v___pyx_state);
+  __pyx_r = __pyx_pf_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer_6__setstate_cython__(((struct __pyx_obj_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *)__pyx_v_self), __pyx_v___pyx_state);
 
   /* function exit code */
   {
@@ -4727,7 +4727,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_6__setstate_cython__(struct __pyx_obj_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer_6__setstate_cython__(struct __pyx_obj_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -4742,7 +4742,7 @@ static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenize
  *     __pyx_unpickle_BasicTokenizer__set_state(self, __pyx_state)             # <<<<<<<<<<<<<<
  */
   if (!(likely(PyTuple_CheckExact(__pyx_v___pyx_state))||((__pyx_v___pyx_state) == Py_None) || __Pyx_RaiseUnexpectedTypeError("tuple", __pyx_v___pyx_state))) __PYX_ERR(1, 17, __pyx_L1_error)
-  __pyx_t_1 = __pyx_f_10SearchLand_12cython_files_9Tokenizer___pyx_unpickle_BasicTokenizer__set_state(__pyx_v_self, ((PyObject*)__pyx_v___pyx_state)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 17, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_10SearchEngine_12cython_files_9Tokenizer___pyx_unpickle_BasicTokenizer__set_state(__pyx_v_self, ((PyObject*)__pyx_v___pyx_state)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 17, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
@@ -4758,7 +4758,7 @@ static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenize
   goto __pyx_L0;
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("SearchLand.cython_files.Tokenizer.BasicTokenizer.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("SearchEngine.cython_files.Tokenizer.BasicTokenizer.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -4773,15 +4773,15 @@ static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer_14BasicTokenize
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_10SearchLand_12cython_files_9Tokenizer_1__pyx_unpickle_BasicTokenizer(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_10SearchEngine_12cython_files_9Tokenizer_1__pyx_unpickle_BasicTokenizer(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_10SearchLand_12cython_files_9Tokenizer_1__pyx_unpickle_BasicTokenizer = {"__pyx_unpickle_BasicTokenizer", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10SearchLand_12cython_files_9Tokenizer_1__pyx_unpickle_BasicTokenizer, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_10SearchLand_12cython_files_9Tokenizer_1__pyx_unpickle_BasicTokenizer(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_10SearchEngine_12cython_files_9Tokenizer_1__pyx_unpickle_BasicTokenizer = {"__pyx_unpickle_BasicTokenizer", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10SearchEngine_12cython_files_9Tokenizer_1__pyx_unpickle_BasicTokenizer, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_10SearchEngine_12cython_files_9Tokenizer_1__pyx_unpickle_BasicTokenizer(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -4881,11 +4881,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("SearchLand.cython_files.Tokenizer.__pyx_unpickle_BasicTokenizer", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("SearchEngine.cython_files.Tokenizer.__pyx_unpickle_BasicTokenizer", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_10SearchLand_12cython_files_9Tokenizer___pyx_unpickle_BasicTokenizer(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
+  __pyx_r = __pyx_pf_10SearchEngine_12cython_files_9Tokenizer___pyx_unpickle_BasicTokenizer(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
 
   /* function exit code */
   {
@@ -4898,7 +4898,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer___pyx_unpickle_BasicTokenizer(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_10SearchEngine_12cython_files_9Tokenizer___pyx_unpickle_BasicTokenizer(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_v___pyx_PickleError = 0;
   PyObject *__pyx_v___pyx_result = 0;
   PyObject *__pyx_r = NULL;
@@ -4980,7 +4980,7 @@ static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer___pyx_unpickle_
  *     if __pyx_state is not None:
  *         __pyx_unpickle_BasicTokenizer__set_state(<BasicTokenizer> __pyx_result, __pyx_state)
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer), __pyx_n_s_new); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 7, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer), __pyx_n_s_new); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   __pyx_t_5 = 0;
@@ -5025,7 +5025,7 @@ static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer___pyx_unpickle_
  * cdef __pyx_unpickle_BasicTokenizer__set_state(BasicTokenizer __pyx_result, tuple __pyx_state):
  */
     if (!(likely(PyTuple_CheckExact(__pyx_v___pyx_state))||((__pyx_v___pyx_state) == Py_None) || __Pyx_RaiseUnexpectedTypeError("tuple", __pyx_v___pyx_state))) __PYX_ERR(1, 9, __pyx_L1_error)
-    __pyx_t_1 = __pyx_f_10SearchLand_12cython_files_9Tokenizer___pyx_unpickle_BasicTokenizer__set_state(((struct __pyx_obj_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *)__pyx_v___pyx_result), ((PyObject*)__pyx_v___pyx_state)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 9, __pyx_L1_error)
+    __pyx_t_1 = __pyx_f_10SearchEngine_12cython_files_9Tokenizer___pyx_unpickle_BasicTokenizer__set_state(((struct __pyx_obj_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *)__pyx_v___pyx_result), ((PyObject*)__pyx_v___pyx_state)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 9, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
@@ -5061,7 +5061,7 @@ static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer___pyx_unpickle_
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("SearchLand.cython_files.Tokenizer.__pyx_unpickle_BasicTokenizer", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("SearchEngine.cython_files.Tokenizer.__pyx_unpickle_BasicTokenizer", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v___pyx_PickleError);
@@ -5079,7 +5079,7 @@ static PyObject *__pyx_pf_10SearchLand_12cython_files_9Tokenizer___pyx_unpickle_
  *     if len(__pyx_state) > 4 and hasattr(__pyx_result, '__dict__'):
  */
 
-static PyObject *__pyx_f_10SearchLand_12cython_files_9Tokenizer___pyx_unpickle_BasicTokenizer__set_state(struct __pyx_obj_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *__pyx_v___pyx_result, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_f_10SearchEngine_12cython_files_9Tokenizer___pyx_unpickle_BasicTokenizer__set_state(struct __pyx_obj_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *__pyx_v___pyx_result, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -5227,17 +5227,17 @@ static PyObject *__pyx_f_10SearchLand_12cython_files_9Tokenizer___pyx_unpickle_B
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
-  __Pyx_AddTraceback("SearchLand.cython_files.Tokenizer.__pyx_unpickle_BasicTokenizer__set_state", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("SearchEngine.cython_files.Tokenizer.__pyx_unpickle_BasicTokenizer__set_state", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
-static struct __pyx_vtabstruct_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer __pyx_vtable_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer;
+static struct __pyx_vtabstruct_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer __pyx_vtable_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer;
 
-static PyObject *__pyx_tp_new_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
-  struct __pyx_obj_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *p;
+static PyObject *__pyx_tp_new_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  struct __pyx_obj_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *p;
   PyObject *o;
   #if CYTHON_COMPILING_IN_LIMITED_API
   allocfunc alloc_func = (allocfunc)PyType_GetSlot(t, Py_tp_alloc);
@@ -5250,15 +5250,15 @@ static PyObject *__pyx_tp_new_10SearchLand_12cython_files_9Tokenizer_BasicTokeni
   }
   if (unlikely(!o)) return 0;
   #endif
-  p = ((struct __pyx_obj_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *)o);
-  p->__pyx_vtab = __pyx_vtabptr_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer;
+  p = ((struct __pyx_obj_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *)o);
+  p->__pyx_vtab = __pyx_vtabptr_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer;
   return o;
 }
 
-static void __pyx_tp_dealloc_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer(PyObject *o) {
+static void __pyx_tp_dealloc_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer(PyObject *o) {
   #if CYTHON_USE_TP_FINALIZE
   if (unlikely((PY_VERSION_HEX >= 0x03080000 || __Pyx_PyType_HasFeature(Py_TYPE(o), Py_TPFLAGS_HAVE_FINALIZE)) && __Pyx_PyObject_GetSlot(o, tp_finalize, destructor)) && (!PyType_IS_GC(Py_TYPE(o)) || !__Pyx_PyObject_GC_IsFinalized(o))) {
-    if (__Pyx_PyObject_GetSlot(o, tp_dealloc, destructor) == __pyx_tp_dealloc_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer) {
+    if (__Pyx_PyObject_GetSlot(o, tp_dealloc, destructor) == __pyx_tp_dealloc_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer) {
       if (PyObject_CallFinalizerFromDealloc(o)) return;
     }
   }
@@ -5273,36 +5273,36 @@ static void __pyx_tp_dealloc_10SearchLand_12cython_files_9Tokenizer_BasicTokeniz
   #endif
 }
 
-static PyMethodDef __pyx_methods_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer[] = {
-  {"__reduce_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_5__reduce_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0},
-  {"__setstate_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_7__setstate_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0},
+static PyMethodDef __pyx_methods_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer[] = {
+  {"__reduce_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer_5__reduce_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0},
+  {"__setstate_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer_7__setstate_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0},
   {0, 0, 0, 0}
 };
 #if CYTHON_USE_TYPE_SPECS
-static PyType_Slot __pyx_type_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer_slots[] = {
-  {Py_tp_dealloc, (void *)__pyx_tp_dealloc_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer},
-  {Py_tp_call, (void *)__pyx_pw_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_3__call__},
+static PyType_Slot __pyx_type_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer_slots[] = {
+  {Py_tp_dealloc, (void *)__pyx_tp_dealloc_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer},
+  {Py_tp_call, (void *)__pyx_pw_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer_3__call__},
   {Py_tp_doc, (void *)PyDoc_STR("\n    A Unicode\342\200\220aware tokenizer:\n    - works on Python str (not bytes)\n    - uses unicodedata to detect punctuation\n    - lowercases full Unicode\n    ")},
-  {Py_tp_methods, (void *)__pyx_methods_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer},
-  {Py_tp_init, (void *)__pyx_pw_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_1__init__},
-  {Py_tp_new, (void *)__pyx_tp_new_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer},
+  {Py_tp_methods, (void *)__pyx_methods_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer},
+  {Py_tp_init, (void *)__pyx_pw_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer_1__init__},
+  {Py_tp_new, (void *)__pyx_tp_new_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer},
   {0, 0},
 };
-static PyType_Spec __pyx_type_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer_spec = {
-  "SearchLand.cython_files.Tokenizer.BasicTokenizer",
-  sizeof(struct __pyx_obj_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer),
+static PyType_Spec __pyx_type_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer_spec = {
+  "SearchEngine.cython_files.Tokenizer.BasicTokenizer",
+  sizeof(struct __pyx_obj_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer),
   0,
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE,
-  __pyx_type_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer_slots,
+  __pyx_type_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer_slots,
 };
 #else
 
-static PyTypeObject __pyx_type_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer = {
+static PyTypeObject __pyx_type_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer = {
   PyVarObject_HEAD_INIT(0, 0)
-  "SearchLand.cython_files.Tokenizer.""BasicTokenizer", /*tp_name*/
-  sizeof(struct __pyx_obj_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer), /*tp_basicsize*/
+  "SearchEngine.cython_files.Tokenizer.""BasicTokenizer", /*tp_name*/
+  sizeof(struct __pyx_obj_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer, /*tp_dealloc*/
+  __pyx_tp_dealloc_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer, /*tp_dealloc*/
   #if PY_VERSION_HEX < 0x030800b4
   0, /*tp_print*/
   #endif
@@ -5322,7 +5322,7 @@ static PyTypeObject __pyx_type_10SearchLand_12cython_files_9Tokenizer_BasicToken
   0, /*tp_as_sequence*/
   0, /*tp_as_mapping*/
   0, /*tp_hash*/
-  __pyx_pw_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_3__call__, /*tp_call*/
+  __pyx_pw_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer_3__call__, /*tp_call*/
   0, /*tp_str*/
   0, /*tp_getattro*/
   0, /*tp_setattro*/
@@ -5335,7 +5335,7 @@ static PyTypeObject __pyx_type_10SearchLand_12cython_files_9Tokenizer_BasicToken
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer, /*tp_methods*/
+  __pyx_methods_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer, /*tp_methods*/
   0, /*tp_members*/
   0, /*tp_getset*/
   0, /*tp_base*/
@@ -5345,9 +5345,9 @@ static PyTypeObject __pyx_type_10SearchLand_12cython_files_9Tokenizer_BasicToken
   #if !CYTHON_USE_TYPE_SPECS
   0, /*tp_dictoffset*/
   #endif
-  __pyx_pw_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_1__init__, /*tp_init*/
+  __pyx_pw_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer_1__init__, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer, /*tp_new*/
+  __pyx_tp_new_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -5405,7 +5405,7 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_kp_s_Incompatible_checksums_0x_x_vs_0, __pyx_k_Incompatible_checksums_0x_x_vs_0, sizeof(__pyx_k_Incompatible_checksums_0x_x_vs_0), 0, 0, 1, 0},
     {&__pyx_n_u_P, __pyx_k_P, sizeof(__pyx_k_P), 0, 1, 0, 1},
     {&__pyx_n_s_PickleError, __pyx_k_PickleError, sizeof(__pyx_k_PickleError), 0, 0, 1, 1},
-    {&__pyx_n_s_SearchLand_cython_files_Tokenize, __pyx_k_SearchLand_cython_files_Tokenize, sizeof(__pyx_k_SearchLand_cython_files_Tokenize), 0, 0, 1, 1},
+    {&__pyx_n_s_SearchEngine_cython_files_Tokenize, __pyx_k_SearchEngine_cython_files_Tokenize, sizeof(__pyx_k_SearchEngine_cython_files_Tokenize), 0, 0, 1, 1},
     {&__pyx_n_s__11, __pyx_k__11, sizeof(__pyx_k__11), 0, 0, 1, 1},
     {&__pyx_kp_u__3, __pyx_k__3, sizeof(__pyx_k__3), 0, 1, 0, 0},
     {&__pyx_n_s__4, __pyx_k__4, sizeof(__pyx_k__4), 0, 0, 1, 1},
@@ -5594,8 +5594,8 @@ static int __Pyx_modinit_global_init_code(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_modinit_global_init_code", 0);
   /*--- Global init code ---*/
-  __pyx_v_10SearchLand_12cython_files_9Tokenizer_STOP_WORDS = ((PyObject*)Py_None); Py_INCREF(Py_None);
-  __pyx_v_10SearchLand_12cython_files_9Tokenizer_CONTRACTIONS = ((PyObject*)Py_None); Py_INCREF(Py_None);
+  __pyx_v_10SearchEngine_12cython_files_9Tokenizer_STOP_WORDS = ((PyObject*)Py_None); Py_INCREF(Py_None);
+  __pyx_v_10SearchEngine_12cython_files_9Tokenizer_CONTRACTIONS = ((PyObject*)Py_None); Py_INCREF(Py_None);
   __Pyx_RefNannyFinishContext();
   return 0;
 }
@@ -5623,47 +5623,47 @@ static int __Pyx_modinit_type_init_code(void) {
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__Pyx_modinit_type_init_code", 0);
   /*--- Type init code ---*/
-  __pyx_vtabptr_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer = &__pyx_vtable_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer;
-  __pyx_vtable_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer._is_punctuation = (int (*)(struct __pyx_obj_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *, PyObject *))__pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_punctuation;
-  __pyx_vtable_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer._normalize = (PyObject *(*)(struct __pyx_obj_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *, PyObject *))__pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__normalize;
-  __pyx_vtable_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer._is_number = (int (*)(struct __pyx_obj_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *, PyObject *))__pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_number;
-  __pyx_vtable_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer._is_valid = (int (*)(struct __pyx_obj_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer *, PyObject *))__pyx_f_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer__is_valid;
+  __pyx_vtabptr_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer = &__pyx_vtable_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer;
+  __pyx_vtable_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer._is_punctuation = (int (*)(struct __pyx_obj_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *, PyObject *))__pyx_f_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer__is_punctuation;
+  __pyx_vtable_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer._normalize = (PyObject *(*)(struct __pyx_obj_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *, PyObject *))__pyx_f_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer__normalize;
+  __pyx_vtable_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer._is_number = (int (*)(struct __pyx_obj_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *, PyObject *))__pyx_f_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer__is_number;
+  __pyx_vtable_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer._is_valid = (int (*)(struct __pyx_obj_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer *, PyObject *))__pyx_f_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer__is_valid;
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_ptype_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer_spec, NULL); if (unlikely(!__pyx_ptype_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer)) __PYX_ERR(0, 25, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer_spec, __pyx_ptype_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer) < 0) __PYX_ERR(0, 25, __pyx_L1_error)
+  __pyx_ptype_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer_spec, NULL); if (unlikely(!__pyx_ptype_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer)) __PYX_ERR(0, 25, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer_spec, __pyx_ptype_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer) < 0) __PYX_ERR(0, 25, __pyx_L1_error)
   #else
-  __pyx_ptype_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer = &__pyx_type_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer;
+  __pyx_ptype_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer = &__pyx_type_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_ptype_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer) < 0) __PYX_ERR(0, 25, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_ptype_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer) < 0) __PYX_ERR(0, 25, __pyx_L1_error)
   #endif
   #if PY_MAJOR_VERSION < 3
-  __pyx_ptype_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer->tp_print = 0;
+  __pyx_ptype_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer->tp_print = 0;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_ptype_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer->tp_dictoffset && __pyx_ptype_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer->tp_getattro == PyObject_GenericGetAttr)) {
-    __pyx_ptype_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer->tp_getattro = __Pyx_PyObject_GenericGetAttr;
+  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_ptype_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer->tp_dictoffset && __pyx_ptype_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer->tp_getattro == PyObject_GenericGetAttr)) {
+    __pyx_ptype_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer->tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
   #endif
   #if CYTHON_UPDATE_DESCRIPTOR_DOC
   {
-    PyObject *wrapper = PyObject_GetAttrString((PyObject *)__pyx_ptype_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer, "__call__"); if (unlikely(!wrapper)) __PYX_ERR(0, 25, __pyx_L1_error)
+    PyObject *wrapper = PyObject_GetAttrString((PyObject *)__pyx_ptype_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer, "__call__"); if (unlikely(!wrapper)) __PYX_ERR(0, 25, __pyx_L1_error)
     if (__Pyx_IS_TYPE(wrapper, &PyWrapperDescr_Type)) {
-      __pyx_wrapperbase_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_2__call__ = *((PyWrapperDescrObject *)wrapper)->d_base;
-      __pyx_wrapperbase_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_2__call__.doc = __pyx_doc_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_2__call__;
-      ((PyWrapperDescrObject *)wrapper)->d_base = &__pyx_wrapperbase_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_2__call__;
+      __pyx_wrapperbase_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer_2__call__ = *((PyWrapperDescrObject *)wrapper)->d_base;
+      __pyx_wrapperbase_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer_2__call__.doc = __pyx_doc_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer_2__call__;
+      ((PyWrapperDescrObject *)wrapper)->d_base = &__pyx_wrapperbase_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer_2__call__;
     }
   }
   #endif
-  if (__Pyx_SetVtable(__pyx_ptype_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer, __pyx_vtabptr_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer) < 0) __PYX_ERR(0, 25, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_ptype_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer, __pyx_vtabptr_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer) < 0) __PYX_ERR(0, 25, __pyx_L1_error)
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if (__Pyx_MergeVtables(__pyx_ptype_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer) < 0) __PYX_ERR(0, 25, __pyx_L1_error)
+  if (__Pyx_MergeVtables(__pyx_ptype_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer) < 0) __PYX_ERR(0, 25, __pyx_L1_error)
   #endif
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_BasicTokenizer, (PyObject *) __pyx_ptype_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer) < 0) __PYX_ERR(0, 25, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_BasicTokenizer, (PyObject *) __pyx_ptype_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer) < 0) __PYX_ERR(0, 25, __pyx_L1_error)
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer) < 0) __PYX_ERR(0, 25, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer) < 0) __PYX_ERR(0, 25, __pyx_L1_error)
   #endif
   __Pyx_RefNannyFinishContext();
   return 0;
@@ -5946,14 +5946,14 @@ if (!__Pyx_RefNanny) {
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
-  if (__pyx_module_is_main_SearchLand__cython_files__Tokenizer) {
+  if (__pyx_module_is_main_SearchEngine__cython_files__Tokenizer) {
     if (PyObject_SetAttr(__pyx_m, __pyx_n_s_name, __pyx_n_s_main) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "SearchLand.cython_files.Tokenizer")) {
-      if (unlikely((PyDict_SetItemString(modules, "SearchLand.cython_files.Tokenizer", __pyx_m) < 0))) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "SearchEngine.cython_files.Tokenizer")) {
+      if (unlikely((PyDict_SetItemString(modules, "SearchEngine.cython_files.Tokenizer", __pyx_m) < 0))) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -5974,7 +5974,7 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "SearchLand/cython_files/Tokenizer.pyx":4
+  /* "SearchEngine/cython_files/Tokenizer.pyx":4
  * # cython: language_level=3
  * 
  * import unicodedata             # <<<<<<<<<<<<<<
@@ -5986,7 +5986,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_unicodedata, __pyx_t_2) < 0) __PYX_ERR(0, 4, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "SearchLand/cython_files/Tokenizer.pyx":6
+  /* "SearchEngine/cython_files/Tokenizer.pyx":6
  * import unicodedata
  * 
  * cdef set STOP_WORDS = {             # <<<<<<<<<<<<<<
@@ -6025,12 +6025,12 @@ if (!__Pyx_RefNanny) {
   if (PySet_Add(__pyx_t_2, __pyx_n_u_by) < 0) __PYX_ERR(0, 7, __pyx_L1_error)
   if (PySet_Add(__pyx_t_2, __pyx_n_u_with) < 0) __PYX_ERR(0, 7, __pyx_L1_error)
   if (PySet_Add(__pyx_t_2, __pyx_n_u_about) < 0) __PYX_ERR(0, 7, __pyx_L1_error)
-  __Pyx_XGOTREF(__pyx_v_10SearchLand_12cython_files_9Tokenizer_STOP_WORDS);
-  __Pyx_DECREF_SET(__pyx_v_10SearchLand_12cython_files_9Tokenizer_STOP_WORDS, ((PyObject*)__pyx_t_2));
+  __Pyx_XGOTREF(__pyx_v_10SearchEngine_12cython_files_9Tokenizer_STOP_WORDS);
+  __Pyx_DECREF_SET(__pyx_v_10SearchEngine_12cython_files_9Tokenizer_STOP_WORDS, ((PyObject*)__pyx_t_2));
   __Pyx_GIVEREF(__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "SearchLand/cython_files/Tokenizer.pyx":14
+  /* "SearchEngine/cython_files/Tokenizer.pyx":14
  * 
  * cdef dict CONTRACTIONS = {
  *     "'m":"am",             # <<<<<<<<<<<<<<
@@ -6048,8 +6048,8 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_t_2, __pyx_kp_u_d, __pyx_n_u_would) < 0) __PYX_ERR(0, 14, __pyx_L1_error)
   if (PyDict_SetItem(__pyx_t_2, __pyx_n_u_gonna, __pyx_kp_u_going_to) < 0) __PYX_ERR(0, 14, __pyx_L1_error)
   if (PyDict_SetItem(__pyx_t_2, __pyx_n_u_wanna, __pyx_kp_u_want_to) < 0) __PYX_ERR(0, 14, __pyx_L1_error)
-  __Pyx_XGOTREF(__pyx_v_10SearchLand_12cython_files_9Tokenizer_CONTRACTIONS);
-  __Pyx_DECREF_SET(__pyx_v_10SearchLand_12cython_files_9Tokenizer_CONTRACTIONS, ((PyObject*)__pyx_t_2));
+  __Pyx_XGOTREF(__pyx_v_10SearchEngine_12cython_files_9Tokenizer_CONTRACTIONS);
+  __Pyx_DECREF_SET(__pyx_v_10SearchEngine_12cython_files_9Tokenizer_CONTRACTIONS, ((PyObject*)__pyx_t_2));
   __Pyx_GIVEREF(__pyx_t_2);
   __pyx_t_2 = 0;
 
@@ -6058,11 +6058,11 @@ if (!__Pyx_RefNanny) {
  *     cdef tuple state
  *     cdef object _dict
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_5__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_BasicTokenizer___reduce_cython, NULL, __pyx_n_s_SearchLand_cython_files_Tokenize, __pyx_d, ((PyObject *)__pyx_codeobj__6)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer_5__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_BasicTokenizer___reduce_cython, NULL, __pyx_n_s_SearchEngine_cython_files_Tokenize, __pyx_d, ((PyObject *)__pyx_codeobj__6)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer, __pyx_n_s_reduce_cython, __pyx_t_2) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer, __pyx_n_s_reduce_cython, __pyx_t_2) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  PyType_Modified(__pyx_ptype_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer);
+  PyType_Modified(__pyx_ptype_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer);
 
   /* "(tree fragment)":16
  *     else:
@@ -6070,23 +6070,23 @@ if (!__Pyx_RefNanny) {
  * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
  *     __pyx_unpickle_BasicTokenizer__set_state(self, __pyx_state)
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10SearchLand_12cython_files_9Tokenizer_14BasicTokenizer_7__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_BasicTokenizer___setstate_cython, NULL, __pyx_n_s_SearchLand_cython_files_Tokenize, __pyx_d, ((PyObject *)__pyx_codeobj__8)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 16, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10SearchEngine_12cython_files_9Tokenizer_14BasicTokenizer_7__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_BasicTokenizer___setstate_cython, NULL, __pyx_n_s_SearchEngine_cython_files_Tokenize, __pyx_d, ((PyObject *)__pyx_codeobj__8)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 16, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer, __pyx_n_s_setstate_cython, __pyx_t_2) < 0) __PYX_ERR(1, 16, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer, __pyx_n_s_setstate_cython, __pyx_t_2) < 0) __PYX_ERR(1, 16, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  PyType_Modified(__pyx_ptype_10SearchLand_12cython_files_9Tokenizer_BasicTokenizer);
+  PyType_Modified(__pyx_ptype_10SearchEngine_12cython_files_9Tokenizer_BasicTokenizer);
 
   /* "(tree fragment)":1
  * def __pyx_unpickle_BasicTokenizer(__pyx_type, long __pyx_checksum, __pyx_state):             # <<<<<<<<<<<<<<
  *     cdef object __pyx_PickleError
  *     cdef object __pyx_result
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10SearchLand_12cython_files_9Tokenizer_1__pyx_unpickle_BasicTokenizer, 0, __pyx_n_s_pyx_unpickle_BasicTokenizer, NULL, __pyx_n_s_SearchLand_cython_files_Tokenize, __pyx_d, ((PyObject *)__pyx_codeobj__10)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10SearchEngine_12cython_files_9Tokenizer_1__pyx_unpickle_BasicTokenizer, 0, __pyx_n_s_pyx_unpickle_BasicTokenizer, NULL, __pyx_n_s_SearchEngine_cython_files_Tokenize, __pyx_d, ((PyObject *)__pyx_codeobj__10)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyx_unpickle_BasicTokenizer, __pyx_t_2) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "SearchLand/cython_files/Tokenizer.pyx":1
+  /* "SearchEngine/cython_files/Tokenizer.pyx":1
  * # Tokenizer.pyx             # <<<<<<<<<<<<<<
  * # cython: language_level=3
  * 
@@ -6103,7 +6103,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_XDECREF(__pyx_t_2);
   if (__pyx_m) {
     if (__pyx_d && stringtab_initialized) {
-      __Pyx_AddTraceback("init SearchLand.cython_files.Tokenizer", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init SearchEngine.cython_files.Tokenizer", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     #if !CYTHON_USE_MODULE_STATE
     Py_CLEAR(__pyx_m);
@@ -6117,7 +6117,7 @@ if (!__Pyx_RefNanny) {
     }
     #endif
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init SearchLand.cython_files.Tokenizer");
+    PyErr_SetString(PyExc_ImportError, "init SearchEngine.cython_files.Tokenizer");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();

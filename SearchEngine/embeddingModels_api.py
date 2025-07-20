@@ -27,10 +27,6 @@ class EmbeddingOpenAI:
 
 
     async def get_embeddings(self, strings: List[str]) -> List[List[float]]:
-
-        # Create a list of tasks for concurrent execution
         tasks = [self.create_embedding(text) for text in strings]
-        
-        # Wait for all tasks to complete
         results = await asyncio.gather(*tasks)
         return results

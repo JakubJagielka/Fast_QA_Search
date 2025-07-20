@@ -26,7 +26,7 @@ cdef struct Document:
 
 
 cdef class InvertedIndex:
-    cdef unordered_map[int, Document] arrays  
+    cdef unordered_map[int, Document] documents  
     cdef unordered_map[string, int] global_term_freq
     cdef object tokenizer
     cdef int chunk_id
@@ -40,13 +40,11 @@ cdef class InvertedIndex:
         self.arrays = unordered_map[int, Document]()
         self.tokenizer = BasicTokenizer() 
         self.chunk_id = 0
-
-    
+  
     def return_chunk(self, int doc_id, int chunk_id) -> str:
         # C++ string → Python bytes → Python str
         cdef bytes b = self.arrays[doc_id].chunks[chunk_id].text
         return b.decode('utf-8', 'replace')
-
 
     def return_close_chunks(self, int doc_id, int chunk_id, int n) -> str:
 
@@ -95,17 +93,7 @@ cdef class InvertedIndex:
             inc(it)
         return (<bytes>text).decode('utf-8','replace')
 
-
-
-    def add_txt(self, str text, int doc_id, str file_name):
-        """
-        text : a Python unicode string
-        """
-        # store file_name as UTF-8 in C++ string
-        cdef string sfile_name = file_name.encode('utf-8')
-        return self.add_to_doc_unicode(text, doc_id, sfile_name)
-
-    def add_txt(self, str text, int doc_id, str file_name, int last_chunk_id = 0):
+    def add_txt(self, str text, int doc_id, str file_name, int last_chunk_id = 0) -> tuple:
         """
         text : a Python unicode string
         """
@@ -116,9 +104,7 @@ cdef class InvertedIndex:
 
         return self.add_to_doc_unicode(text, doc_id, sfile_name)
 
-
-    cdef add_to_doc_unicode(self, str utext, int doc_id, string file_name
-                            ):
+    cdef add_to_doc_unicode(self, str utext, int doc_id, string file_name):
         """
         utext is a Python unicode string.
         We chunk it in *characters*, but store the UTF-8 bytes in each Chunk.
@@ -198,8 +184,7 @@ cdef class InvertedIndex:
         self.avg_doc_length = ((self.avg_doc_length * (self.total_docs - 1)) + len(index)) / self.total_docs
         return texts, chunks_ids, doc_id
 
-
-    def delete_doc(self, int doc_id):
+    def delete_doc(self, int doc_id) -> bool:
         """
         Deletes a document and its associated data from the index.
         """
@@ -244,20 +229,17 @@ cdef class InvertedIndex:
         print(f"Successfully deleted document with ID {doc_id}.")
         return True # Indicate successful deletion
 
-    def has_doc(self, int doc_id):
+    def has_doc(self, int doc_id) -> bool:
         """
         Check if a document with the given ID exists in the index.
         """
         return self.arrays.find(doc_id) != self.arrays.end()
 
-
-    def add_emmbeddings(self, list[list[float]] embeddings_req, int doc_id):
+    def add_emmbeddings(self, list[list[float]] embeddings_req, int doc_id) -> None:
         for i,embedding  in enumerate(embeddings_req):
-            self.arrays[doc_id].chunks[i].embeddings = embedding
-            
+            self.arrays[doc_id].chunks[i].embeddings = embedding   
 
-
-    def search(self, str sentence, int top_n=5):
+    def search(self, str sentence, int top_n=5) -> list:
         # 1) tokenize on Python unicode
         cdef list py_tokens = self.tokenizer(sentence)
         if not py_tokens:
@@ -333,7 +315,6 @@ cdef class InvertedIndex:
         # 6) sort & return top_n
         results.sort(key=lambda x: x['score'], reverse=True)
         return results[:top_n]
-
 
     cdef float _calculate_proximity_score(self, int doc_id, vector[string]& query_tokens):
         cdef float proximity_score = 0.0

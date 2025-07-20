@@ -13,13 +13,12 @@ logger = get_logger()
 @dataclass
 class DocumentMetadata:
     file_path: str
-    file_hash: str # Content hash for files, URLs, text
+    file_hash: str 
     file_size: int
-    last_modified: float # File mtime or processing time for text/URL
+    last_modified: float 
     doc_id: int
     chunk_ids: Set[int] = field(default_factory=set)
     embedding_model_name: Optional[str] = None
-
 
 class DocumentTracker:
     _next_doc_id = 0
@@ -32,7 +31,6 @@ class DocumentTracker:
         self._doc_id_to_path: Dict[int, str] = {}
         self._hash_to_doc_id: Dict[str, int] = {}
         self.load_metadata()
-
 
     def load_metadata(self):
         if Path(self.metadata_path).exists():
@@ -99,7 +97,6 @@ class DocumentTracker:
             logger.info(f"Metadata file {self.metadata_path} not found. Starting fresh.")
             DocumentTracker._next_doc_id = 0
 
-
     def reset(self) -> None:
         logger.info("Resetting DocumentTracker state.")
         self.documents = {}
@@ -135,7 +132,6 @@ class DocumentTracker:
         except Exception as e:
             logger.error(f"Failed to save metadata: {e}", exc_info=True)
 
-
     def add_chunk_ids(self, file_path: str, chunk_ids: Set[int]) -> None:
         norm_path = os.path.normpath(file_path)
         if norm_path in self.documents:
@@ -149,7 +145,6 @@ class DocumentTracker:
         norm_path = os.path.normpath(file_path)
         metadata = self.documents.get(norm_path)
         return metadata.chunk_ids if metadata else None
-
 
     def get_content_hash(self, content: bytes) -> str:
         return hashlib.sha256(content).hexdigest()
@@ -168,7 +163,6 @@ class DocumentTracker:
             logger.error(f"Error calculating hash for {file_path}: {e}")
             return ""
 
-
     def should_process_file(
         self,
         file_path: str,
@@ -176,7 +170,7 @@ class DocumentTracker:
         content: Optional[str] = None
     ) -> Tuple[bool, int]:
         norm_path = os.path.normpath(file_path)
-        is_pseudo_path = norm_path.startswith(("text_input/", "url_")) or not ("/" in norm_path or "\\" in norm_path)
+        is_pseudo_path = norm_path.startswith(("text_input/", "url_", "text_input\\")) or not ("/" in norm_path or "\\" in norm_path)
 
         current_time = time.time()
         content_hash = ""
@@ -234,7 +228,6 @@ class DocumentTracker:
                  doc_id = self.generate_doc_id()
                  self._register_document(norm_path, content_hash, file_size, last_modified, doc_id, embedding_model)
                  return True, doc_id
-
         else: # Handle real files
             path = Path(norm_path)
             if not path.exists():
@@ -329,7 +322,6 @@ class DocumentTracker:
              self._hash_to_doc_id[file_hash] = doc_id
         logger.debug(f"Registered document: {norm_path} (ID: {doc_id})")
 
-
     def delete_file(self, file_path: str) -> Optional[Set[int]]:
         norm_path = os.path.normpath(file_path)
         metadata = self.documents.pop(norm_path, None) # Use pop to get and remove
@@ -351,18 +343,11 @@ class DocumentTracker:
 
         logger.info(f"Deleted metadata for: {norm_path} (Doc ID: {doc_id})")
         try:
-            self.save_metadata()
             return chunk_ids
         except Exception as e:
              logger.error(f"Failed to save metadata after deleting {norm_path}: {e}")
              # Should we rollback? Difficult. Return chunks but log error.
              return chunk_ids # Return chunks even if save failed, but state is inconsistent
-
-
-    def generate_doc_id(self) -> int:
-        doc_id = DocumentTracker._next_doc_id
-        DocumentTracker._next_doc_id += 1
-        return doc_id
 
     def get_processed_files(self) -> Set[str]:
         return set(self.documents.keys())
@@ -370,10 +355,6 @@ class DocumentTracker:
     def get_filepath_for_docid(self, doc_id: int) -> Optional[str]:
         return self._doc_id_to_path.get(doc_id)
 
-    def get_docid_for_filepath(self, file_path: str) -> Optional[int]:
-        norm_path = os.path.normpath(file_path)
-        metadata = self.documents.get(norm_path)
-        return metadata.doc_id if metadata else None
-
-    def find_doc_by_hash(self, content_hash: str) -> Optional[int]:
         return self._hash_to_doc_id.get(content_hash)
+    
+   

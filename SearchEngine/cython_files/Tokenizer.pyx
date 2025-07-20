@@ -23,21 +23,11 @@ cdef dict CONTRACTIONS = {
 }
 
 cdef class BasicTokenizer:
-    """
-    A Unicode‐aware tokenizer:
-    - works on Python str (not bytes)
-    - uses unicodedata to detect punctuation
-    - lowercases full Unicode
-    """
-
     cdef int min_token_length, max_token_length
     cdef bint remove_numbers, remove_single_chars
 
-    def __init__(self,
-                 bint remove_numbers=False,
-                 bint remove_single_chars=True,
-                 int min_token_length=2,
-                 int max_token_length=50):
+    def __init__(self, bint remove_numbers=False, bint remove_single_chars=True,
+        int min_token_length=2, int max_token_length=50):
         self.remove_numbers = remove_numbers
         self.remove_single_chars = remove_single_chars
         self.min_token_length = min_token_length
@@ -74,7 +64,7 @@ cdef class BasicTokenizer:
             return False
         return True
 
-    def __call__(self, text):
+    def __call__(self, text: str) -> list[str]:
         """
         text: a Python str (Unicode).
         returns: a Python list of Python str tokens.
@@ -82,7 +72,7 @@ cdef class BasicTokenizer:
         cdef list tokens = []
         cdef list curr = []
         for ch in text:
-            if self._is_punctuation(ch): #error
+            if self._is_punctuation(ch): 
                 if curr:
                     tok = "".join(curr).lower()
                     tok = self._normalize(tok)

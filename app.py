@@ -3,9 +3,9 @@ import os
 from werkzeug.utils import secure_filename
 import traceback
 from typing import List, Dict, Optional
-from SearchLand.utils._logger import get_logger
-from SearchLand.utils._data_types import SearchMode, SearchResult, EmbeddingType
-from SearchLand.main import SearchEngine
+from SearchEngine.utils._logger import get_logger
+from SearchEngine.utils._data_types import SearchMode, SearchResult, EmbeddingType
+from SearchEngine.main import SearchEngine
 
 
 logger = get_logger()

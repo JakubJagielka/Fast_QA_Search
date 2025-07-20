@@ -11,13 +11,12 @@ from .utils._logger import get_logger
 from .llm_qa import LLM_QA
 from .faiss_search import VectorStore
 from .cython_files.Data_Struct import InvertedIndex
-
+from dotenv import load_dotenv
+load_dotenv()
 logger = get_logger()
 
 class SearchEngine:
-    def __init__(self,
-                 path: Optional[str] = None,
-                 embedding_model_type: EmbeddingType = EmbeddingType.MINILM_L6,
+    def __init__(self, path: Optional[str] = None, model_type: EmbeddingType = EmbeddingType.MINILM_L6,
                  openai_apikey = None,
                  temp: bool = False
                  ) -> None:
@@ -26,7 +25,7 @@ class SearchEngine:
         self.keyword_weight = 0.5
         self.openai_client = AsyncOpenAI(api_key=openai_apikey) if openai_apikey else None
 
-        self.data_storage = DataStorage(embedding_model_type, self.openai_client, temp)
+        self.data_storage = DataStorage(model_type, self.openai_client, temp)
         if path:
             self._initialize_storage(path)
             if self.data_storage.changed:
@@ -35,21 +34,8 @@ class SearchEngine:
 
         self.llm_qa = LLM_QA(self.openai_client)
 
-
-    def _initialize_storage(self, path: str) -> None:
-        if isdir(path):
-            logger.info(f"Reading from directory: {path}")
-            self.data_storage.read_from_folder(path)
-        else:
-            logger.info(f"Reading from file: {path}")
-            self.data_storage.read_from_file(path)
-
-
-    def search(self,
-               query: str,
-               k: int = 3,
-               vector_store_path: str = 'data',
-               mode: SearchMode = SearchMode.HYBRID
+    def search(self, query: str, k: int = 3, mode: SearchMode = SearchMode.HYBRID,
+               vector_store_path: str = 'data'
                ) -> List[SearchResult]:
 
         search_methods = {
@@ -61,49 +47,102 @@ class SearchEngine:
         results = search_func(query, k, vector_store_path)
         self.display_results(results)
         return results
+    
+    def add_source(self, item: str, domain=False) -> bool:
+        success = False
+        if item.startswith(('http://', 'https://')):
+            if domain:
+                success = self.data_storage.read_from_domain(item)
+            else:
+                success = self.data_storage.read_from_url(item)
+        elif os.path.isdir(item):
+            success = self.data_storage.read_from_folder(item)
+        elif os.path.isfile(item):
+            success = self.data_storage.read_from_file(item)
+        else:
+            # Assume it's text if it's not a recognized path or URL
+            success = self.data_storage.read_from_text(item)
 
-    def _semantic_search(self, query: str, k: int, index_name: str = 'data') -> List[SearchResult]:
-        # 1) embed
-        vec = self.data_storage.create_embeddings(query)
-        distances, chunk_ids, doc_ids = self.data_storage.vector_store.search(vec, index_name, k)
-        results = []
-        for score, cid, did in zip(distances, chunk_ids, doc_ids):
-            file_name = self.data_storage.get_filename_for_docid(did) or "Unknown"
-            snippet = self.retrive_chunk(did, cid)
-            results.append(SearchResult(
-                doc_id=did,
-                file_name=file_name,
-                bm25_score=0.0,
-                semantic_score=score,
-                combined_score=score,
-                positions={},
-                all_terms_present=False,
-                chunk_id=[cid],
-                chunk_text=[snippet]
-            ))
-        return results
+        if success and self.data_storage.changed:
+            logger.info("Data changed, saving vector store and metadata.")
+            self.data_storage.save_vector_store()
+            self.data_storage.document_tracker.save_metadata()
+            self.data_storage.changed = False # Reset flag after saving
+        elif not success:
+            logger.error(f"Failed to add source: {item}")
 
-    def _keyword_search(self, query: str, k: int, _unused: str = '') -> List[SearchResult]:
-        hits: List[Dict] = self.data_storage.index.search(query, k)
-        results = []
-        # hits are dicts with keys doc_id, bm25_score, positions, all_terms_present, file_name, probably chunk_id?
-        for r in hits:
-            doc_id = r['doc_id']
-            file_name = (r.get('file_name') or b'').decode() if isinstance(r.get('file_name'), bytes) else r.get('file_name','Unknown')
-            results.append(SearchResult(
-                doc_id=doc_id,
-                file_name=file_name,
-                bm25_score=r.get('bm25_score', 0.0),
-                semantic_score=0.0,
-                combined_score=r.get('bm25_score', 0.0),
-                positions=r.get('positions', {}),
-                all_terms_present=r.get('all_terms_present', False),
-                chunk_id=r.get('chunk_id', []),
-                chunk_text=[ self.retrive_chunk(doc_id, cid) for cid in r.get('chunk_id',[]) ]
-            ))
-        # sort descending by bm25
-        return sorted(results, key=lambda x: x.bm25_score, reverse=True)
+        return success
 
+    def set_search_weights(self, semantic_weight: float = 0.5, keyword_weight: float = 0.5) -> None:
+        if not (0 <= semantic_weight <= 1 and 0 <= keyword_weight <= 1):
+            raise ValueError("Weights must be between 0 and 1.")
+        if abs(semantic_weight + keyword_weight - 1.0) > 1e-6:
+            raise ValueError("Weights must sum to 1.")
+
+        self.semantic_weight = semantic_weight
+        self.keyword_weight = keyword_weight
+        logger.info(f"Search weights updated: Semantic={semantic_weight}, Keyword={keyword_weight}")
+
+    def retrive_chunk(self, doc_id: int, chunk_id: int) -> str:
+        try:
+            return self.data_storage.index.return_chunk(doc_id, chunk_id)
+        except Exception as e:
+            logger.error(f"Error retrieving chunk {chunk_id} for doc {doc_id}: {e}")
+            return f"[Error retrieving chunk {chunk_id}]"
+
+    def retrive_close_chunks(self, doc_id: int, chunk_id: int, k: int = 3) -> str:
+        try:
+            return self.data_storage.index.return_close_chunks(doc_id, chunk_id, k)
+        except Exception as e:
+            logger.error(f"Error retrieving close chunks for chunk {chunk_id}, doc {doc_id}: {e}")
+            return f"[Error retrieving close chunks for {chunk_id}]"
+
+    def retrive_document_text(self, doc_id: int) -> str:
+        try:
+            return self.data_storage.index.return_doc(doc_id)
+        except Exception as e:
+            logger.error(f"Error retrieving document text for doc {doc_id}: {e}")
+            return f"[Error retrieving document {doc_id}]"
+
+    def list_sources(self) -> List[Dict[str, Any]]:
+        """Returns a list of indexed sources with their metadata."""
+        return self.data_storage.list_tracked_documents()
+    
+    def display_results(self, results: List[SearchResult], detailed: bool = True) -> None:
+        if len(results) == 0:
+            print("No relevant results found.")
+            return
+
+        for i, result in enumerate(results, 1):
+            print(f"\n=== Result {i} ===")
+            print(f"File: {result.file_name} (Doc ID: {result.doc_id})")
+            print(f"Combined Score: {result.combined_score:.4f}")
+            print(f"BM25 Score: {result.bm25_score:.4f}")
+            print(f"Semantic Score: {result.semantic_score:.4f}")
+            print(f"All Terms Present: {result.all_terms_present}")
+            print(f"{len(result.chunk_id)} Relevant Chunks Found: {result.chunk_id}")
+
+            if detailed:
+                self._display_detailed_results(result)
+
+    def get_source_content(self, doc_id: int) -> str:
+        """Retrieves the full text content of a source by its doc_id."""
+        logger.info(f"Retrieving content for doc_id: {doc_id}")
+        return self.retrive_document_text(doc_id)
+
+    def delete_source(self, doc_id: int) -> bool:
+        """Deletes a source from the index, vector store, and tracker."""
+        logger.warning(f"Attempting to delete source with doc_id: {doc_id}")
+        success = self.data_storage.delete_source_by_id(doc_id)
+        if success:
+            logger.info(f"Successfully deleted source with doc_id: {doc_id}. Saving changes.")
+            # Save changes after deletion
+            self.data_storage.save_vector_store()
+            self.data_storage.document_tracker.save_metadata()
+        else:
+            logger.error(f"Failed to delete source with doc_id: {doc_id}")
+        return success
+    
     def reembed_document(self, doc_id: int) -> bool:
         """
         Fully re‐processes a tracked document: rebuilds its chunks & re‐embeds.
@@ -144,23 +183,15 @@ class SearchEngine:
         
         return True
 
-    def llm_qa_search(self, query: str, model: str = 'gpt-4o-mini', k=3, vector_store_path: str ='data') -> str:
-        vector_store_file = f"vector_store/{vector_store_path}.faiss"
-        if os.path.isfile(vector_store_file):
-            logger.info(f"Searching vector store: {vector_store_file}")
-            results = self.data_storage.vector_store.search(
-                self.data_storage.create_embeddings(query), vector_store_path, k*2
-            )
-            logger.info(f"Semantic search returned {len(results[1])} results for QA context.")
-        else:
-            logger.warning(f"Vector store file not found: {vector_store_file}")
-            results = ([], [], [])
-
-        context_chunks = [self.retrive_chunk(results[2][i], results[1][i]) for i in range(len(results[1]))]
-        if not context_chunks:
+    def llm_qa_search(self, query: str, model: str = 'gpt-4.1-mini', k=3, vector_store_path: str ='data') -> str:
+        context = self._hybrid_search(query, k)
+        texts = [result.chunk_text for result in context]
+        texts = [text for sublist in texts for text in sublist]  # Flatten the list of lists
+        texts = [text for text in texts if text]  # Remove empty strings
+        if not texts:
             return "I couldn't find relevant information to answer your question."
 
-        coro = self.llm_qa.answer(query, context_chunks, model=model)
+        coro = self.llm_qa.answer(query, texts, model=model)
         try:
             loop = asyncio.get_running_loop()
             # we *are* in a loop
@@ -168,8 +199,61 @@ class SearchEngine:
         except RuntimeError:
             # no running loop
             return asyncio.run(coro)
-        
-        
+      
+    def _initialize_storage(self, path: str) -> None:
+        if isdir(path):
+            logger.info(f"Reading from directory: {path}")
+            self.data_storage.read_from_folder(path)
+        else:
+            logger.info(f"Reading from file: {path}")
+            self.data_storage.read_from_file(path)
+     
+    def _semantic_search(self, query: str, k: int, index_name: str = 'data') -> List[SearchResult]:
+        # 1) embed
+        logger.info(f"Semantic search start: query={query!r}, k={k}")
+        vec = self.data_storage.create_embeddings(query)
+        distances, chunk_ids, doc_ids = self.data_storage.vector_store.search(vec, index_name, k)
+        results = []
+        for score, cid, did in zip(distances, chunk_ids, doc_ids):
+            file_name = self.data_storage.get_filename_for_docid(did) or "Unknown"
+            snippet = self.retrive_chunk(did, cid)
+            results.append(SearchResult(
+                doc_id=did,
+                file_name=file_name,
+                bm25_score=0.0,
+                semantic_score=score,
+                combined_score=score,
+                positions={},
+                all_terms_present=False,
+                chunk_id=[cid],
+                chunk_text=[snippet]
+            ))
+        logger.info(f"Semantic search: returning {len(results)} results.")
+        return results
+
+    def _keyword_search(self, query: str, k: int, _unused: str = '') -> List[SearchResult]:
+        logger.info(f"Keyword search start: query={query!r}, k={k}")
+        hits: List[Dict] = self.data_storage.index.search(query, k)
+        results = []
+        # hits are dicts with keys doc_id, bm25_score, positions, all_terms_present, file_name, probably chunk_id?
+        for r in hits:
+            doc_id = r['doc_id']
+            file_name = (r.get('file_name') or b'').decode() if isinstance(r.get('file_name'), bytes) else r.get('file_name','Unknown')
+            results.append(SearchResult(
+                doc_id=doc_id,
+                file_name=file_name,
+                bm25_score=r.get('bm25_score', 0.0),
+                semantic_score=0.0,
+                combined_score=r.get('bm25_score', 0.0),
+                positions=r.get('positions', {}),
+                all_terms_present=r.get('all_terms_present', False),
+                chunk_id=r.get('chunk_id', []),
+                chunk_text=[ self.retrive_chunk(doc_id, cid) for cid in r.get('chunk_id',[]) ]
+            ))
+        # sort descending by bm25
+        logger.info(f"Keyword search: returning {len(results)} results.")
+        return sorted(results, key=lambda x: x.bm25_score, reverse=True)
+   
     def _hybrid_search(self, query: str, k: int, path: str = 'data') -> List[SearchResult]:
         """
         Hybrid search combining BM25 and semantic scores.
@@ -283,7 +367,7 @@ class SearchEngine:
 
             # final fallback if nothing retrieved
             if not texts:
-                texts = ["[No relevant chunk identified]"]
+                texts = ["No relevant chunk identified"]
                 chunk_ids = []
 
             final.append(SearchResult(
@@ -333,23 +417,6 @@ class SearchEngine:
             chunk_text=chunk_texts
         )
 
-    def display_results(self, results: List[SearchResult], detailed: bool = True) -> None:
-        if len(results) == 0:
-            print("No relevant results found.")
-            return
-
-        for i, result in enumerate(results, 1):
-            print(f"\n=== Result {i} ===")
-            print(f"File: {result.file_name} (Doc ID: {result.doc_id})")
-            print(f"Combined Score: {result.combined_score:.4f}")
-            print(f"BM25 Score: {result.bm25_score:.4f}")
-            print(f"Semantic Score: {result.semantic_score:.4f}")
-            print(f"All Terms Present: {result.all_terms_present}")
-            print(f"{len(result.chunk_id)} Relevant Chunks Found: {result.chunk_id}")
-
-            if detailed:
-                self._display_detailed_results(result)
-
     def _display_detailed_results(self, result: SearchResult) -> None:
         print("\nToken Positions:")
         for token, info in result.positions.items():
@@ -362,83 +429,6 @@ class SearchEngine:
                 print(f"\nRelevant Chunk (ID: {result.chunk_id[i]}):")
                 print(chunk_text[:200] + "..." if len(chunk_text) > 200 else chunk_text) # Display snippet
 
-    def add_source(self, item: str, domain=False) -> bool:
-        success = False
-        if item.startswith(('http://', 'https://')):
-            if domain:
-                success = self.data_storage.read_from_domain(item)
-            else:
-                success = self.data_storage.read_from_url(item)
-        elif os.path.isdir(item):
-            success = self.data_storage.read_from_folder(item)
-        elif os.path.isfile(item):
-            success = self.data_storage.read_from_file(item)
-        else:
-            # Assume it's text if it's not a recognized path or URL
-            success = self.data_storage.read_from_text(item)
-
-        if success and self.data_storage.changed:
-            logger.info("Data changed, saving vector store and metadata.")
-            self.data_storage.save_vector_store()
-            self.data_storage.document_tracker.save_metadata()
-            self.data_storage.changed = False # Reset flag after saving
-        elif not success:
-            logger.error(f"Failed to add source: {item}")
-
-        return success
-
-    def set_search_weights(self, semantic_weight: float = 0.5, keyword_weight: float = 0.5) -> None:
-        if not (0 <= semantic_weight <= 1 and 0 <= keyword_weight <= 1):
-            raise ValueError("Weights must be between 0 and 1.")
-        if abs(semantic_weight + keyword_weight - 1.0) > 1e-6:
-            raise ValueError("Weights must sum to 1.")
-
-        self.semantic_weight = semantic_weight
-        self.keyword_weight = keyword_weight
-        logger.info(f"Search weights updated: Semantic={semantic_weight}, Keyword={keyword_weight}")
-
-    def retrive_chunk(self, doc_id: int, chunk_id: int) -> str:
-        try:
-            return self.data_storage.index.return_chunk(doc_id, chunk_id)
-        except Exception as e:
-            logger.error(f"Error retrieving chunk {chunk_id} for doc {doc_id}: {e}")
-            return f"[Error retrieving chunk {chunk_id}]"
-
-    def retrive_close_chunks(self, doc_id: int, chunk_id: int, k: int = 3) -> str:
-        try:
-            return self.data_storage.index.return_close_chunks(doc_id, chunk_id, k)
-        except Exception as e:
-            logger.error(f"Error retrieving close chunks for chunk {chunk_id}, doc {doc_id}: {e}")
-            return f"[Error retrieving close chunks for {chunk_id}]"
-
-    def retrive_document_text(self, doc_id: int) -> str:
-        try:
-            return self.data_storage.index.return_doc(doc_id)
-        except Exception as e:
-            logger.error(f"Error retrieving document text for doc {doc_id}: {e}")
-            return f"[Error retrieving document {doc_id}]"
-
-    def list_sources(self) -> List[Dict[str, Any]]:
-        """Returns a list of indexed sources with their metadata."""
-        return self.data_storage.list_tracked_documents()
-
-    def get_source_content(self, doc_id: int) -> str:
-        """Retrieves the full text content of a source by its doc_id."""
-        logger.info(f"Retrieving content for doc_id: {doc_id}")
-        return self.retrive_document_text(doc_id)
-
-    def delete_source(self, doc_id: int) -> bool:
-        """Deletes a source from the index, vector store, and tracker."""
-        logger.warning(f"Attempting to delete source with doc_id: {doc_id}")
-        success = self.data_storage.delete_source_by_id(doc_id)
-        if success:
-            logger.info(f"Successfully deleted source with doc_id: {doc_id}. Saving changes.")
-            # Save changes after deletion
-            self.data_storage.save_vector_store()
-            self.data_storage.document_tracker.save_metadata()
-        else:
-            logger.error(f"Failed to delete source with doc_id: {doc_id}")
-        return success
 
 def simple_search(path: Union[str, List[str]],
                  query: str,
@@ -456,13 +446,23 @@ def simple_qa(query: str, path: Union[str, List[str]], k: int = 3, model: str = 
 
 
 if __name__ == "__main__":
-    logger.info("Starting the search engine in standalone mode...")
-    openai_key = os.getenv("OPENAI_API_KEY", "YOUR_API_KEY_HERE")
+    logger.info("Przykład użycia aplikacji w kodzie.")
     
+    openai_key = os.getenv("OPENAI_API_KEY", "YOUR_API_KEY_HERE")
     if openai_key == "YOUR_API_KEY_HERE":
         logger.warning("OpenAI API key not set. QA functionality might be limited.")
         openai_key = None
 
-    search_engine = SearchEngine('data', EmbeddingType.MINILM_L6, openai_apikey=openai_key)
+    search_engine = SearchEngine(path='data', model_type= EmbeddingType.MINILM_L6, openai_apikey=openai_key)
 
-    logger.info("Search engine standalone example finished.")
+    search_engine.add_source("https://pl.wikipedia.org/wiki/Papież", domain=True)
+    search_engine.search("Obecny papież", k=3)
+    
+    search_engine.add_source("C:/Users/Jakub/Documents/Wzor_pracy_dyplomowej_AK.pdf")
+    search_engine.search("Jak powinno wyglądać zakończenie pracy.", k=3)
+    
+    odpowiedz = search_engine.llm_qa_search("Jakie porady dodatkowe dotyczące pracy dyplomowej możesz mi dać?",
+                                            model='gpt-4.1-mini', k=3)
+    print(f"\nOdpowiedź modelu LLM: {odpowiedz}")
+    
+    logger.info("Zakończono działanie aplikacji.")

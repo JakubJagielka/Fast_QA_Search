@@ -30,7 +30,6 @@ class VectorStore:
             if 'data' not in self.indexes:
                 self.add_index('data')
 
-
     def add_index(self, index_name: str) -> None:
         if index_name in self.indexes:
             logger.warning(f"Index '{index_name}' already exists. Skipping creation.")
@@ -44,7 +43,6 @@ class VectorStore:
         except Exception as e:
             logger.error(f"Failed to create index '{index_name}': {str(e)}", exc_info=True)
             raise
-
 
     def _get_metadata_path(self) -> str:
          return self.metadata_filename
@@ -65,7 +63,6 @@ class VectorStore:
                 
         except Exception as e:
             logger.error(f"Failed to save indexes or metadata to {save_dir}: {str(e)}", exc_info=True)
-
 
     def load(self, directory: Optional[str] = None) -> None:
         if self.is_temp:
@@ -137,7 +134,6 @@ class VectorStore:
             if 'data' not in self.indexes:
                  self.add_index('data')
 
-
     def reconstruct_by_id(self, index_name: str, chunk_id: int) -> Optional[np.ndarray]:
         """
         Reconstructs a vector from the specified FAISS index using its chunk_id.
@@ -173,11 +169,7 @@ class VectorStore:
             logger.error(f"Unexpected error reconstructing vector for chunk_id {chunk_id} (ID: {vector_id}) in index '{index_name}': {e}", exc_info=True)
             return None
 
-    def add_vectors(self,
-                   vectors: Union[np.ndarray, List[List[float]]],
-                   doc_id: int,
-                   chunk_ids: Union[List[int], np.ndarray],
-                   index_name: str) -> None:
+    def add_vectors(self,vectors: Union[np.ndarray, List[List[float]]], doc_id: int,chunk_ids: Union[List[int], np.ndarray],index_name: str) -> None:
         if index_name not in self.indexes:
             logger.warning(f"Index '{index_name}' not found. Creating it now.")
             self.add_index(index_name)
@@ -228,7 +220,6 @@ class VectorStore:
         except Exception as e:
             logger.error(f"Failed to add vectors to index '{index_name}': {str(e)}", exc_info=True)
 
-
     def delete_vectors(self, index_name: str, doc_id: Optional[int] = None, chunk_ids: Optional[List[int]] = None):
         if index_name not in self.indexes:
             logger.error(f"Index '{index_name}' not found for deletion.")
@@ -274,11 +265,7 @@ class VectorStore:
             logger.error(f"Failed to delete vectors from index '{index_name}': {str(e)}", exc_info=True)
             return 0
 
-
-    def search(self,
-              query_vector: Union[List[float], np.ndarray],
-              index_name: str,
-              k: int = 5) -> Tuple[List[float], List[int], List[int]]:
+    def search(self,query_vector: Union[List[float], np.ndarray],index_name: str, k: int = 5) -> Tuple[List[float], List[int], List[int]]:
 
         if index_name not in self.indexes:
             logger.error(f"Index '{index_name}' not found for search.")
@@ -335,7 +322,6 @@ class VectorStore:
         except Exception as e:
             logger.error(f"Search failed in index '{index_name}': {str(e)}", exc_info=True)
             return [], [], []
-        
         
     def delete_from_disk(self) -> None:
         """
